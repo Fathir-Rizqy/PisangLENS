@@ -124,4 +124,4 @@ Paket utama memuat PNG untuk presentasi dan SVG untuk penyuntingan. Plot utama d
 
 ## Pengembangan selanjutnya
 
-Prioritas berikutnya adalah validasi eksternal pada kebun/perangkat nyata, evaluasi foto di luar cakupan empat kelas, pemeriksaan performa serta penggunaan offline pada ponsel, dan tinjauan aturan tindak lanjut bersama pakar tanaman.
+Prioritas berikutnya adalah validasi eksternal pada kebun atau perangkat nyata, evaluasi foto di luar cakupan empat kelas, pemeriksaan performa serta penggunaan offline pada ponsel, dan tinjauan aturan tindak lanjut bersama pakar tanaman.
