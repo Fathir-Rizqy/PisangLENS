@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Verifikasi Botani | PisangLENS</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script type="module" src="js/staff.js"></script>
+</head>
+<body>
+    <main data-role="admin">
+        <div id="staff-panel" class="dashboard-layout" hidden>
+            <aside class="dashboard-sidebar">
+                <a class="brand" href="#dashboard">PisangLENS <small>RUANG ADMIN</small></a>
+                <nav class="dashboard-nav" aria-label="Navigasi Admin">
+                    <a href="#dashboard">Beranda</a>
+                    <a href="#verifikasi">Verifikasi Botani</a>
+                    <a href="#dataset">Kurasi Data Latih</a>
+                    <a href="#direktori">Direktori Botani</a>
+                </nav>
+                <p>Menjaga akses pakar untuk konsultasi yang tepercaya.</p>
+                <button class="secondary" id="staff-logout" type="button">Keluar</button>
+            </aside>
+            <div class="dashboard-main">
+                <header class="dashboard-header">
+                    <div><p class="eyebrow">PENGELOLA / VERIFIKASI AKUN</p><h1 id="dashboard-title">Beranda Admin</h1></div>
+                    <span id="admin-mode" class="badge">Akun Admin</span>
+                </header>
+                <p id="staff-status" class="dashboard-notice" role="status"></p>
+                <section id="dashboard" data-dashboard-section data-title="Beranda Admin">
+                    <div class="hero"><h2>Ruang verifikasi pakar</h2><p>Tinjau informasi pendaftaran botani sebelum memberikan akses ke konsultasi.</p><a href="#verifikasi" class="action-link">Tinjau permohonan</a></div>
+                    <div class="panel"><h2>Alur peninjauan</h2><p>Periksa nama, email, dan nomor lisensi. Konfirmasikan keputusan untuk menyetujui atau menolak permohonan.</p></div>
+                </section>
+                <section id="direktori" data-dashboard-section data-title="Direktori Botani" hidden>
+                    <div id="admin-directory" class="panel">
+                        <h2>Botani terdaftar</h2>
+                        <label>Provinsi <select data-province><option value="">Semua provinsi</option></select></label>
+                        <label>Kota/kabupaten <select data-city><option value="">Semua kota/kabupaten</option></select></label>
+                        <label>Status verifikasi <select data-verification><option value="">Semua status</option><option value="approved">Terverifikasi</option><option value="pending">Menunggu</option><option value="rejected">Ditolak</option></select></label>
+                        <button class="secondary" type="button" data-directory-refresh>Muat ulang direktori</button>
+                        <p data-directory-status role="status"></p><ul class="history-list" data-directory-list></ul>
+                    </div>
+                </section>
+                <section id="verifikasi" data-dashboard-section data-title="Verifikasi Botani" hidden>
+                    <div class="panel verification-intro">
+                        <div><p class="eyebrow">PENINJAUAN AKUN PAKAR</p><h2>Permohonan menunggu verifikasi</h2><p>Tinjau identitas dan informasi profesional setiap pendaftar sebelum menentukan keputusan.</p></div>
+                        <button class="secondary" id="refresh-queue" type="button">Muat ulang antrean</button>
+                    </div>
+                    <p id="decision-feedback" class="dashboard-notice" role="status"></p>
+                    <ul class="history-list verification-list" id="verification-list" aria-label="Daftar permohonan botani"></ul>
+                </section>
+                <section id="dataset" data-dashboard-section data-title="Kurasi Data Latih" class="panel" hidden>
+                    <h2>Foto dan label hasil peninjauan botani</h2>
+                    <p>Kandidat yang disetujui tersedia untuk pelatihan model berikutnya. Model aktif tetap digunakan sampai model baru selesai dievaluasi dan dirilis.</p>
+                    <button id="learning-refresh" class="secondary" type="button">Muat ulang kandidat</button>
+                    <p id="learning-status" role="status"></p>
+                    <ul id="learning-list" class="history-list"></ul>
+                </section>
+                <dialog id="verification-confirm">
+                    <h2>Konfirmasi keputusan</h2><p id="confirmation-detail"></p>
+                    <div class="actions"><button type="button" id="confirm-decision">Konfirmasikan</button><button class="secondary" type="button" id="cancel-decision">Batal</button></div>
+                </dialog>
+            </div>
+        </div>
+    </main>
+    <noscript><p>Aktifkan JavaScript untuk membuka dashboard. <a href="admin-masuk.html">Masuk Admin</a></p></noscript>
+</body>
+</html>

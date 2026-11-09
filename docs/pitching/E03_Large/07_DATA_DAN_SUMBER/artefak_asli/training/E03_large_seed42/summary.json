@@ -1,0 +1,87 @@
+{
+  "run_id": "E03_large_seed42",
+  "spec": {
+    "recipe": "E03",
+    "variant": "large",
+    "profile": "paper_baseline",
+    "loss": "weighted",
+    "sampler": "natural",
+    "seed": 42,
+    "parent_recipe": "E02",
+    "full_finetune": false
+  },
+  "status": "completed",
+  "diagnostic": false,
+  "fingerprint": "4d290d8d10c0e8b23943673a1aa5eccecbcf79dea8d12ac66f558c0500313914",
+  "best": {
+    "accuracy": 0.9851851851851852,
+    "macro_f1": 0.9826652019022815,
+    "weighted_f1": 0.9849589052214155,
+    "balanced_accuracy": 0.9791666666666666,
+    "per_class": {
+      "0": {
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348,
+        "support": 24
+      },
+      "1": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 14
+      },
+      "2": {
+        "precision": 0.9629629629629629,
+        "recall": 1.0,
+        "f1": 0.9811320754716981,
+        "support": 26
+      },
+      "3": {
+        "precision": 0.9861111111111112,
+        "recall": 1.0,
+        "f1": 0.993006993006993,
+        "support": 71
+      }
+    },
+    "loss": 0.07139345730344454,
+    "val_ce": 0.07139345730344454,
+    "epoch": 7,
+    "stage": "B",
+    "stage_epoch": 2
+  },
+  "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42",
+  "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42/checkpoints/best.pt",
+  "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+  "elapsed_seconds": 86.29912157600006,
+  "epoch_counts": {
+    "A": 5,
+    "B": 8
+  },
+  "stage_seconds": {
+    "A": 30.776116264000052,
+    "B": 52.19775617700043
+  },
+  "parameters": {
+    "A": {
+      "opened_modules": [],
+      "total": 4207156,
+      "trainable": 1235204
+    },
+    "B": {
+      "opened_modules": [
+        "features.13",
+        "features.14",
+        "features.15",
+        "features.16"
+      ],
+      "total": 4207156,
+      "trainable": 3401420
+    }
+  },
+  "pretrained": {
+    "enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/mobilenet_v3_large-5c1a4163.pth"
+  },
+  "peak_vram_bytes": 450589696
+}

@@ -1,0 +1,25 @@
+{
+  "image_size": 224,
+  "orientation": "EXIF transpose",
+  "color": "RGB",
+  "resize_policy": "direct_bilinear",
+  "interpolation": "bilinear_antialias",
+  "layout": "NCHW",
+  "dtype": "float32",
+  "pixel_range_before_normalization": [
+    0,
+    1
+  ],
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "normalization": "outside_model_once",
+  "augmentation_at_inference": false
+}

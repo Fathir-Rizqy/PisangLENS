@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/prediction.mjs && node tests/model-integrity.mjs && node tests/auth-logout.mjs && node tests/chat-reliability.mjs"
+  }
+}

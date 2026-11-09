@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Masuk Admin | PisangLENS</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script type="module" src="js/auth.js"></script>
+</head>
+<body>
+    <main class="auth-shell" data-login-role="admin">
+        <p class="eyebrow">PisangLENS / PENGELOLA</p>
+        <h1>Ruang Admin</h1>
+        <p class="intro">Tinjau akun botani dan kelola keputusan verifikasi.</p>
+        <section class="panel">
+            <h2 id="login-title">Masuk Admin</h2>
+            <form id="login-form" novalidate>
+                <label>Email <input name="email" type="email" required autocomplete="username" maxlength="254"></label>
+                <label>Kata sandi <input name="password" type="password" required autocomplete="current-password"></label>
+                <button type="submit">Masuk Admin</button>
+                <p id="auth-status" class="message" role="status"></p>
+            </form>
+            <p>Akun disiapkan melalui proses provisioning oleh pengelola.</p>
+        </section>
+    </main>
+</body>
+</html>

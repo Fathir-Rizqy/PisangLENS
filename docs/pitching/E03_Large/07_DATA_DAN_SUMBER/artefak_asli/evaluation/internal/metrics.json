@@ -1,0 +1,459 @@
+{
+  "n": 135,
+  "four_class": {
+    "accuracy": 0.9851851851851852,
+    "macro_f1": 0.9793523064799661,
+    "weighted_f1": 0.9852960919942794,
+    "balanced_accuracy": 0.986863488624052,
+    "per_class": {
+      "0": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 25
+      },
+      "1": {
+        "precision": 0.9285714285714286,
+        "recall": 1.0,
+        "f1": 0.9629629629629629,
+        "support": 13
+      },
+      "2": {
+        "precision": 0.9615384615384616,
+        "recall": 0.9615384615384616,
+        "f1": 0.9615384615384616,
+        "support": 26
+      },
+      "3": {
+        "precision": 1.0,
+        "recall": 0.9859154929577465,
+        "f1": 0.9929078014184397,
+        "support": 71
+      }
+    },
+    "macro_precision": 0.9725274725274725,
+    "macro_recall": 0.986863488624052,
+    "weighted_precision": 0.9857142857142855,
+    "weighted_recall": 0.9851851851851852,
+    "confusion_matrix": [
+      [
+        25,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        13,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        25,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        70
+      ]
+    ],
+    "per_class_counts": {
+      "0": {
+        "correct": 25,
+        "incorrect": 0
+      },
+      "1": {
+        "correct": 13,
+        "incorrect": 0
+      },
+      "2": {
+        "correct": 25,
+        "incorrect": 1
+      },
+      "3": {
+        "correct": 70,
+        "incorrect": 1
+      }
+    },
+    "ovr_roc_auc": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 0.9985885673959068,
+      "3": 1.0
+    }
+  },
+  "binary": {
+    "disease_recall": {
+      "value": 0.9918032786885246,
+      "numerator": 121,
+      "denominator": 122,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "healthy_specificity": {
+      "value": 1.0,
+      "numerator": 13,
+      "denominator": 13,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "disease_to_healthy": {
+      "value": 0.00819672131147541,
+      "numerator": 1,
+      "denominator": 122,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "healthy_to_disease": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 13,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "roc_auc": 1.0,
+    "average_precision": 1.0
+  },
+  "calibration_raw": {
+    "nll": 0.038407851160073114,
+    "brier_multiclass_sum": 0.018926539876556316,
+    "ece_top_label": 0.01192299741329947,
+    "bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.30000000000000004,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.30000000000000004,
+        "upper": 0.4,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6000000000000001,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.6000000000000001,
+        "upper": 0.7000000000000001,
+        "n": 1,
+        "accuracy": 0.0,
+        "mean_confidence": 0.6545618324686158
+      },
+      {
+        "lower": 0.7000000000000001,
+        "upper": 0.8,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "n": 2,
+        "accuracy": 0.5,
+        "mean_confidence": 0.8472527621773671
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "n": 132,
+        "accuracy": 1.0,
+        "mean_confidence": 0.9980262326214236
+      }
+    ]
+  },
+  "calibration_scaled": {
+    "nll": 0.03766265097277535,
+    "brier_multiclass_sum": 0.01754807082280765,
+    "ece_top_label": 0.014820185890197696,
+    "bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.30000000000000004,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.30000000000000004,
+        "upper": 0.4,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6000000000000001,
+        "n": 1,
+        "accuracy": 0.0,
+        "mean_confidence": 0.5958182634728052
+      },
+      {
+        "lower": 0.6000000000000001,
+        "upper": 0.7000000000000001,
+        "n": 0,
+        "accuracy": null,
+        "mean_confidence": null
+      },
+      {
+        "lower": 0.7000000000000001,
+        "upper": 0.8,
+        "n": 2,
+        "accuracy": 0.5,
+        "mean_confidence": 0.7430854921448206
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "n": 1,
+        "accuracy": 1.0,
+        "mean_confidence": 0.8606788881593553
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "n": 131,
+        "accuracy": 1.0,
+        "mean_confidence": 0.9940502691940947
+      }
+    ]
+  },
+  "selective": {
+    "coverage": {
+      "value": 0.9925925925925926,
+      "numerator": 134,
+      "denominator": 135,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "selective_risk": {
+      "value": 0.007462686567164179,
+      "numerator": 1,
+      "denominator": 134,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "correct_accepted_yield": {
+      "value": 0.9851851851851852,
+      "numerator": 133,
+      "denominator": 135,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "false_reassurance": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 122,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "conditional_healthy_risk": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 13,
+      "unit": "proportion",
+      "status": "defined"
+    },
+    "accepted_predicted_healthy": 13,
+    "accepted_total": 134,
+    "per_class": {
+      "0": {
+        "coverage": {
+          "value": 1.0,
+          "numerator": 25,
+          "denominator": 25,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_recall": {
+          "value": 1.0,
+          "numerator": 25,
+          "denominator": 25,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "refusal_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 25,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_true_support": 25,
+        "accepted_predicted_support": 25
+      },
+      "1": {
+        "coverage": {
+          "value": 1.0,
+          "numerator": 13,
+          "denominator": 13,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_recall": {
+          "value": 1.0,
+          "numerator": 13,
+          "denominator": 13,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "refusal_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 13,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_true_support": 13,
+        "accepted_predicted_support": 13
+      },
+      "2": {
+        "coverage": {
+          "value": 0.9615384615384616,
+          "numerator": 25,
+          "denominator": 26,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_recall": {
+          "value": 0.9615384615384616,
+          "numerator": 25,
+          "denominator": 26,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "refusal_rate": {
+          "value": 0.038461538461538464,
+          "numerator": 1,
+          "denominator": 26,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_true_support": 25,
+        "accepted_predicted_support": 26
+      },
+      "3": {
+        "coverage": {
+          "value": 1.0,
+          "numerator": 71,
+          "denominator": 71,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_recall": {
+          "value": 0.9859154929577465,
+          "numerator": 70,
+          "denominator": 71,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "refusal_rate": {
+          "value": 0.0,
+          "numerator": 0,
+          "denominator": 71,
+          "unit": "proportion",
+          "status": "defined"
+        },
+        "accepted_true_support": 71,
+        "accepted_predicted_support": 70
+      }
+    },
+    "decision_counts": {
+      "correct_accepted": 133,
+      "wrong_disease_name": 1,
+      "disease_to_healthy": 0,
+      "healthy_to_disease": 0,
+      "uncertain": 1,
+      "technical_error": 0
+    }
+  },
+  "dummy_majority": {
+    "majority_class_from_train": 3,
+    "metrics": {
+      "accuracy": 0.5259259259259259,
+      "macro_f1": 0.17233009708737865,
+      "weighted_f1": 0.3625314635023373,
+      "balanced_accuracy": 0.25,
+      "per_class": {
+        "0": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 25
+        },
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 26
+        },
+        "3": {
+          "precision": 0.5259259259259259,
+          "recall": 1.0,
+          "f1": 0.6893203883495146,
+          "support": 71
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar | PisangLENS</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script type="module" src="js/auth.js"></script>
+</head>
+<body>
+    <main class="auth-shell">
+        <p class="eyebrow">PisangLENS / AKSES AKUN</p>
+        <h1>Buat akun PisangLENS</h1>
+        <p class="intro">Akun petani langsung aktif. Akun botani memerlukan verifikasi admin.</p>
+        <section class="panel">
+            <form id="register-form" novalidate>
+                <label>Nama lengkap <input name="name" autocomplete="name" required maxlength="150"></label>
+                <label>Email <input name="email" type="email" autocomplete="username" required maxlength="254"></label>
+                <label>Kata sandi <small>8–72 byte</small><input name="password" type="password" autocomplete="new-password" required></label>
+                <label>Ulangi kata sandi <input name="confirmation" type="password" autocomplete="new-password" required></label>
+                <label>Peran
+                    <select name="role">
+                        <option value="petani">Petani</option>
+                        <option value="botani">Botani</option>
+                    </select>
+                </label>
+                <label id="license-field" hidden>Nomor lisensi <input name="license_number" maxlength="100" disabled></label>
+                <fieldset id="professional-fields" hidden>
+                    <legend>Profil profesional botani</legend>
+                    <label>Asal institusi <input name="institution" autocomplete="organization" maxlength="150" disabled></label>
+                    <label>Provinsi <input name="province" autocomplete="address-level1" maxlength="100" aria-describedby="registration-region-help" disabled></label>
+                    <label>Kabupaten/Kota <input name="city" autocomplete="address-level2" maxlength="100" aria-describedby="registration-region-help" disabled></label>
+                    <p class="profile-help" id="registration-region-help">Saran wilayah berisi contoh terbatas untuk demo. Anda dapat mengetik wilayah sendiri; data ini tidak mencakup seluruh wilayah Indonesia.</p>
+                </fieldset>
+                <button type="submit">Daftar</button>
+                <p class="message" id="auth-status" role="status"></p>
+            </form>
+            <p><a href="index.html">Kembali ke halaman masuk</a></p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,3 @@
+image_id,label_name,predicted_class,confidence,policy_status
+raw_e9abdeb7f9b0_00341,pestalotiopsis,healthy,0.7129367729651712,uncertain
+raw_e9abdeb7f9b0_00748,sigatoka,pestalotiopsis,0.5958182634728052,supported_prediction

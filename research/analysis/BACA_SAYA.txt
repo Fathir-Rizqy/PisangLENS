@@ -1,0 +1,7 @@
+ANALISIS MOBILE NET V3 — PISANGLENS
+
+Buka laporan_analisis.html untuk laporan dan galeri plot. Data turunan tersedia di folder data/; grafik ada di plots/.
+Notebook eksperimen ada di ../PisangLENS.ipynb. Paket bobot inference yang dipakai aplikasi ada di ../../model-python/.
+
+Skrip generate_analysis.py disertakan sebagai provenance. Untuk membuat ulang seluruh laporan, skrip membutuhkan artefak training/evaluasi asli di folder outputs/ yang tidak disertakan dalam paket publik ini.
+Dataset mentah lengkap dan checkpoint eksperimen tidak disalin. Ringkasan metrik dan visual hasil tersimpan tetap tersedia di folder ini.

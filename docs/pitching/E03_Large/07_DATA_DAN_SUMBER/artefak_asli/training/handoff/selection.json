@@ -1,0 +1,1343 @@
+{
+  "final_recipe": "E03",
+  "variant": "large",
+  "selected_seed": 42,
+  "selected_run": "E03_large_seed42",
+  "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42/checkpoints/best.pt",
+  "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+  "best": {
+    "accuracy": 0.9851851851851852,
+    "macro_f1": 0.9826652019022815,
+    "weighted_f1": 0.9849589052214155,
+    "balanced_accuracy": 0.9791666666666666,
+    "per_class": {
+      "0": {
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348,
+        "support": 24
+      },
+      "1": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 14
+      },
+      "2": {
+        "precision": 0.9629629629629629,
+        "recall": 1.0,
+        "f1": 0.9811320754716981,
+        "support": 26
+      },
+      "3": {
+        "precision": 0.9861111111111112,
+        "recall": 1.0,
+        "f1": 0.993006993006993,
+        "support": 71
+      }
+    },
+    "loss": 0.07139345730344454,
+    "val_ce": 0.07139345730344454,
+    "epoch": 7,
+    "stage": "B",
+    "stage_epoch": 2
+  },
+  "aggregates": {
+    "small": {
+      "recipe": "E02",
+      "seeds": [
+        42,
+        17,
+        2026
+      ],
+      "macro_f1_mean": 0.9760114298940309,
+      "macro_f1_sample_std": 0.005886407547416795,
+      "balanced_accuracy_mean": 0.9767628205128206,
+      "balanced_accuracy_sample_std": 0.005551444896054139,
+      "recall": {
+        "0": {
+          "mean": 0.9583333333333334,
+          "sample_std": 0.0
+        },
+        "1": {
+          "mean": 1.0,
+          "sample_std": 0.0
+        },
+        "2": {
+          "mean": 0.9487179487179488,
+          "sample_std": 0.02220577958421636
+        },
+        "3": {
+          "mean": 1.0,
+          "sample_std": 0.0
+        }
+      }
+    },
+    "large": {
+      "recipe": "E03",
+      "seeds": [
+        42,
+        17,
+        2026
+      ],
+      "macro_f1_mean": 0.9826652019022815,
+      "macro_f1_sample_std": 0.0,
+      "balanced_accuracy_mean": 0.9791666666666666,
+      "balanced_accuracy_sample_std": 0.0,
+      "recall": {
+        "0": {
+          "mean": 0.9166666666666666,
+          "sample_std": 0.0
+        },
+        "1": {
+          "mean": 1.0,
+          "sample_std": 0.0
+        },
+        "2": {
+          "mean": 1.0,
+          "sample_std": 0.0
+        },
+        "3": {
+          "mean": 1.0,
+          "sample_std": 0.0
+        }
+      }
+    }
+  },
+  "finalists": {
+    "small": [
+      {
+        "run_id": "E02_small_seed42",
+        "spec": {
+          "recipe": "E02",
+          "variant": "small",
+          "profile": "paper_baseline",
+          "loss": "weighted",
+          "sampler": "natural",
+          "seed": 42,
+          "parent_recipe": "",
+          "full_finetune": false
+        },
+        "status": "completed",
+        "diagnostic": false,
+        "fingerprint": "fbef32dd386c7f4c50a9acbb352453d7f52ffd50944c7e3625a728e2a768f4ac",
+        "best": {
+          "accuracy": 0.9851851851851852,
+          "macro_f1": 0.9794099488760919,
+          "weighted_f1": 0.9851873752841916,
+          "balanced_accuracy": 0.9799679487179488,
+          "per_class": {
+            "0": {
+              "precision": 1.0,
+              "recall": 0.9583333333333334,
+              "f1": 0.9787234042553191,
+              "support": 24
+            },
+            "1": {
+              "precision": 0.9333333333333333,
+              "recall": 1.0,
+              "f1": 0.9655172413793104,
+              "support": 14
+            },
+            "2": {
+              "precision": 1.0,
+              "recall": 0.9615384615384616,
+              "f1": 0.9803921568627451,
+              "support": 26
+            },
+            "3": {
+              "precision": 0.9861111111111112,
+              "recall": 1.0,
+              "f1": 0.993006993006993,
+              "support": 71
+            }
+          },
+          "loss": 0.10752337199670298,
+          "val_ce": 0.10752337199670298,
+          "epoch": 14,
+          "stage": "B",
+          "stage_epoch": 9
+        },
+        "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed42",
+        "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed42/checkpoints/best.pt",
+        "checkpoint_sha256": "7f8bc40f89507efa72dca513cc4b680a81779987f164f24ef09c2c3db3940bc3",
+        "elapsed_seconds": 113.112546479,
+        "epoch_counts": {
+          "A": 5,
+          "B": 14
+        },
+        "stage_seconds": {
+          "A": 28.285720766000168,
+          "B": 81.90039244700006
+        },
+        "parameters": {
+          "A": {
+            "opened_modules": [],
+            "total": 1521956,
+            "trainable": 594948
+          },
+          "B": {
+            "opened_modules": [
+              "features.9",
+              "features.10",
+              "features.11",
+              "features.12"
+            ],
+            "total": 1521956,
+            "trainable": 1323948
+          }
+        },
+        "pretrained": {
+          "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+          "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+        },
+        "peak_vram_bytes": 265280512
+      },
+      {
+        "run_id": "E02_small_seed17",
+        "spec": {
+          "recipe": "E02",
+          "variant": "small",
+          "profile": "paper_baseline",
+          "loss": "weighted",
+          "sampler": "natural",
+          "seed": 17,
+          "parent_recipe": "",
+          "full_finetune": false
+        },
+        "status": "completed",
+        "diagnostic": false,
+        "fingerprint": "6c110cb7250f8397b2dc4f415ec20b0ad2e667ec1a1f755066be6ee07f0fd526",
+        "best": {
+          "accuracy": 0.9777777777777777,
+          "macro_f1": 0.9692143919299091,
+          "weighted_f1": 0.977635095428199,
+          "balanced_accuracy": 0.9703525641025641,
+          "per_class": {
+            "0": {
+              "precision": 0.9583333333333334,
+              "recall": 0.9583333333333334,
+              "f1": 0.9583333333333334,
+              "support": 24
+            },
+            "1": {
+              "precision": 0.9333333333333333,
+              "recall": 1.0,
+              "f1": 0.9655172413793104,
+              "support": 14
+            },
+            "2": {
+              "precision": 1.0,
+              "recall": 0.9230769230769231,
+              "f1": 0.96,
+              "support": 26
+            },
+            "3": {
+              "precision": 0.9861111111111112,
+              "recall": 1.0,
+              "f1": 0.993006993006993,
+              "support": 71
+            }
+          },
+          "loss": 0.11190940428663183,
+          "val_ce": 0.11190940428663183,
+          "epoch": 8,
+          "stage": "B",
+          "stage_epoch": 3
+        },
+        "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed17",
+        "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed17/checkpoints/best.pt",
+        "checkpoint_sha256": "253ccfd0ac8d296596022ab4f14a5bc0ec71df5b0dcecf24b994f05262e9b0e2",
+        "elapsed_seconds": 88.82006729400007,
+        "epoch_counts": {
+          "A": 5,
+          "B": 10
+        },
+        "stage_seconds": {
+          "A": 27.874523124000007,
+          "B": 58.478287376999674
+        },
+        "parameters": {
+          "A": {
+            "opened_modules": [],
+            "total": 1521956,
+            "trainable": 594948
+          },
+          "B": {
+            "opened_modules": [
+              "features.9",
+              "features.10",
+              "features.11",
+              "features.12"
+            ],
+            "total": 1521956,
+            "trainable": 1323948
+          }
+        },
+        "pretrained": {
+          "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+          "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+        },
+        "peak_vram_bytes": 282750976
+      },
+      {
+        "run_id": "E02_small_seed2026",
+        "spec": {
+          "recipe": "E02",
+          "variant": "small",
+          "profile": "paper_baseline",
+          "loss": "weighted",
+          "sampler": "natural",
+          "seed": 2026,
+          "parent_recipe": "",
+          "full_finetune": false
+        },
+        "status": "completed",
+        "diagnostic": false,
+        "fingerprint": "c919aa2e389bf66da0b4a99a089653ba55b8233774ff1e344a16a47a13e16cd7",
+        "best": {
+          "accuracy": 0.9851851851851852,
+          "macro_f1": 0.9794099488760919,
+          "weighted_f1": 0.9851873752841916,
+          "balanced_accuracy": 0.9799679487179488,
+          "per_class": {
+            "0": {
+              "precision": 1.0,
+              "recall": 0.9583333333333334,
+              "f1": 0.9787234042553191,
+              "support": 24
+            },
+            "1": {
+              "precision": 0.9333333333333333,
+              "recall": 1.0,
+              "f1": 0.9655172413793104,
+              "support": 14
+            },
+            "2": {
+              "precision": 1.0,
+              "recall": 0.9615384615384616,
+              "f1": 0.9803921568627451,
+              "support": 26
+            },
+            "3": {
+              "precision": 0.9861111111111112,
+              "recall": 1.0,
+              "f1": 0.993006993006993,
+              "support": 71
+            }
+          },
+          "loss": 0.11349056661128998,
+          "val_ce": 0.11349056661128998,
+          "epoch": 13,
+          "stage": "B",
+          "stage_epoch": 8
+        },
+        "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed2026",
+        "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed2026/checkpoints/best.pt",
+        "checkpoint_sha256": "1a6086ea3a76e3566edeef3668bfbe7861638c3348e1362fef06d4ec8eb67470",
+        "elapsed_seconds": 118.20118356600005,
+        "epoch_counts": {
+          "A": 5,
+          "B": 15
+        },
+        "stage_seconds": {
+          "A": 27.826186575000065,
+          "B": 87.54950926700008
+        },
+        "parameters": {
+          "A": {
+            "opened_modules": [],
+            "total": 1521956,
+            "trainable": 594948
+          },
+          "B": {
+            "opened_modules": [
+              "features.9",
+              "features.10",
+              "features.11",
+              "features.12"
+            ],
+            "total": 1521956,
+            "trainable": 1323948
+          }
+        },
+        "pretrained": {
+          "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+          "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+        },
+        "peak_vram_bytes": 282750976
+      }
+    ],
+    "large": [
+      {
+        "run_id": "E03_large_seed42",
+        "spec": {
+          "recipe": "E03",
+          "variant": "large",
+          "profile": "paper_baseline",
+          "loss": "weighted",
+          "sampler": "natural",
+          "seed": 42,
+          "parent_recipe": "E02",
+          "full_finetune": false
+        },
+        "status": "completed",
+        "diagnostic": false,
+        "fingerprint": "4d290d8d10c0e8b23943673a1aa5eccecbcf79dea8d12ac66f558c0500313914",
+        "best": {
+          "accuracy": 0.9851851851851852,
+          "macro_f1": 0.9826652019022815,
+          "weighted_f1": 0.9849589052214155,
+          "balanced_accuracy": 0.9791666666666666,
+          "per_class": {
+            "0": {
+              "precision": 1.0,
+              "recall": 0.9166666666666666,
+              "f1": 0.9565217391304348,
+              "support": 24
+            },
+            "1": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 14
+            },
+            "2": {
+              "precision": 0.9629629629629629,
+              "recall": 1.0,
+              "f1": 0.9811320754716981,
+              "support": 26
+            },
+            "3": {
+              "precision": 0.9861111111111112,
+              "recall": 1.0,
+              "f1": 0.993006993006993,
+              "support": 71
+            }
+          },
+          "loss": 0.07139345730344454,
+          "val_ce": 0.07139345730344454,
+          "epoch": 7,
+          "stage": "B",
+          "stage_epoch": 2
+        },
+        "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42",
+        "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42/checkpoints/best.pt",
+        "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+        "elapsed_seconds": 86.29912157600006,
+        "epoch_counts": {
+          "A": 5,
+          "B": 8
+        },
+        "stage_seconds": {
+          "A": 30.776116264000052,
+          "B": 52.19775617700043
+        },
+        "parameters": {
+          "A": {
+            "opened_modules": [],
+            "total": 4207156,
+            "trainable": 1235204
+          },
+          "B": {
+            "opened_modules": [
+              "features.13",
+              "features.14",
+              "features.15",
+              "features.16"
+            ],
+            "total": 4207156,
+            "trainable": 3401420
+          }
+        },
+        "pretrained": {
+          "enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+          "url": "https://download.pytorch.org/models/mobilenet_v3_large-5c1a4163.pth"
+        },
+        "peak_vram_bytes": 450589696
+      },
+      {
+        "run_id": "E03_large_seed17",
+        "spec": {
+          "recipe": "E03",
+          "variant": "large",
+          "profile": "paper_baseline",
+          "loss": "weighted",
+          "sampler": "natural",
+          "seed": 17,
+          "parent_recipe": "E02",
+          "full_finetune": false
+        },
+        "status": "completed",
+        "diagnostic": false,
+        "fingerprint": "cb60fc0491ac923b7f6056f5ba1ebedeba8291ee2cde5852edd75978a335bfa4",
+        "best": {
+          "accuracy": 0.9851851851851852,
+          "macro_f1": 0.9826652019022815,
+          "weighted_f1": 0.9849589052214155,
+          "balanced_accuracy": 0.9791666666666666,
+          "per_class": {
+            "0": {
+              "precision": 1.0,
+              "recall": 0.9166666666666666,
+              "f1": 0.9565217391304348,
+              "support": 24
+            },
+            "1": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 14
+            },
+            "2": {
+              "precision": 0.9629629629629629,
+              "recall": 1.0,
+              "f1": 0.9811320754716981,
+              "support": 26
+            },
+            "3": {
+              "precision": 0.9861111111111112,
+              "recall": 1.0,
+              "f1": 0.993006993006993,
+              "support": 71
+            }
+          },
+          "loss": 0.047212216420168124,
+          "val_ce": 0.047212216420168124,
+          "epoch": 13,
+          "stage": "B",
+          "stage_epoch": 8
+        },
+        "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed17",
+        "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed17/checkpoints/best.pt",
+        "checkpoint_sha256": "e287360d020c89506a459792cac7ead2ef5d126d358ca8175c87398aacf1a257",
+        "elapsed_seconds": 86.20510051199994,
+        "epoch_counts": {
+          "A": 5,
+          "B": 8
+        },
+        "stage_seconds": {
+          "A": 30.4760593110002,
+          "B": 52.22940538900002
+        },
+        "parameters": {
+          "A": {
+            "opened_modules": [],
+            "total": 4207156,
+            "trainable": 1235204
+          },
+          "B": {
+            "opened_modules": [
+              "features.13",
+              "features.14",
+              "features.15",
+              "features.16"
+            ],
+            "total": 4207156,
+            "trainable": 3401420
+          }
+        },
+        "pretrained": {
+          "enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+          "url": "https://download.pytorch.org/models/mobilenet_v3_large-5c1a4163.pth"
+        },
+        "peak_vram_bytes": 469214208
+      },
+      {
+        "run_id": "E03_large_seed2026",
+        "spec": {
+          "recipe": "E03",
+          "variant": "large",
+          "profile": "paper_baseline",
+          "loss": "weighted",
+          "sampler": "natural",
+          "seed": 2026,
+          "parent_recipe": "E02",
+          "full_finetune": false
+        },
+        "status": "completed",
+        "diagnostic": false,
+        "fingerprint": "a055b1030981618d215bc2a33384f1ff783d0c0c2ea58b5b912a9a4e7f068217",
+        "best": {
+          "accuracy": 0.9851851851851852,
+          "macro_f1": 0.9826652019022815,
+          "weighted_f1": 0.9849589052214155,
+          "balanced_accuracy": 0.9791666666666666,
+          "per_class": {
+            "0": {
+              "precision": 1.0,
+              "recall": 0.9166666666666666,
+              "f1": 0.9565217391304348,
+              "support": 24
+            },
+            "1": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 14
+            },
+            "2": {
+              "precision": 0.9629629629629629,
+              "recall": 1.0,
+              "f1": 0.9811320754716981,
+              "support": 26
+            },
+            "3": {
+              "precision": 0.9861111111111112,
+              "recall": 1.0,
+              "f1": 0.993006993006993,
+              "support": 71
+            }
+          },
+          "loss": 0.051474646230538684,
+          "val_ce": 0.051474646230538684,
+          "epoch": 5,
+          "stage": "A",
+          "stage_epoch": 5
+        },
+        "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed2026",
+        "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed2026/checkpoints/best.pt",
+        "checkpoint_sha256": "740650679aef29e53747d58d3fda226c134be165064e3eb79d01167aef02c033",
+        "elapsed_seconds": 78.63230722599997,
+        "epoch_counts": {
+          "A": 5,
+          "B": 7
+        },
+        "stage_seconds": {
+          "A": 30.275549693999892,
+          "B": 45.43471051900019
+        },
+        "parameters": {
+          "A": {
+            "opened_modules": [],
+            "total": 4207156,
+            "trainable": 1235204
+          },
+          "B": {
+            "opened_modules": [
+              "features.13",
+              "features.14",
+              "features.15",
+              "features.16"
+            ],
+            "total": 4207156,
+            "trainable": 3401420
+          }
+        },
+        "pretrained": {
+          "enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+          "url": "https://download.pytorch.org/models/mobilenet_v3_large-5c1a4163.pth"
+        },
+        "peak_vram_bytes": 544055296
+      }
+    ]
+  },
+  "all_runs": [
+    {
+      "run_id": "E00_small_seed42",
+      "spec": {
+        "recipe": "E00",
+        "variant": "small",
+        "profile": "none",
+        "loss": "unweighted",
+        "sampler": "natural",
+        "seed": 42,
+        "parent_recipe": "",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "d35c45863a34d75f07b3b4b2aa60b12ed59601d178297a0ebbe1116b41d5c003",
+      "best": {
+        "accuracy": 0.9777777777777777,
+        "macro_f1": 0.9691461087637999,
+        "weighted_f1": 0.9776093305328688,
+        "balanced_accuracy": 0.969551282051282,
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9166666666666666,
+            "f1": 0.9565217391304348,
+            "support": 24
+          },
+          "1": {
+            "precision": 0.9333333333333333,
+            "recall": 1.0,
+            "f1": 0.9655172413793104,
+            "support": 14
+          },
+          "2": {
+            "precision": 0.9615384615384616,
+            "recall": 0.9615384615384616,
+            "f1": 0.9615384615384616,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.1092304324662244,
+        "val_ce": 0.1092304324662244,
+        "epoch": 9,
+        "stage": "B",
+        "stage_epoch": 4
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E00_small_seed42",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E00_small_seed42/checkpoints/best.pt",
+      "checkpoint_sha256": "c460e2100b3d91c4f26246b838682621c642d8eb3f5d072ff5c4c6ee9da9507c",
+      "elapsed_seconds": 45.44672292500002,
+      "epoch_counts": {
+        "A": 5,
+        "B": 7
+      },
+      "stage_seconds": {
+        "A": 17.36354698699995,
+        "B": 25.86336277600003
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 1521956,
+          "trainable": 594948
+        },
+        "B": {
+          "opened_modules": [
+            "features.9",
+            "features.10",
+            "features.11",
+            "features.12"
+          ],
+          "total": 1521956,
+          "trainable": 1323948
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+      },
+      "peak_vram_bytes": 207728128
+    },
+    {
+      "run_id": "E01_small_seed42",
+      "spec": {
+        "recipe": "E01",
+        "variant": "small",
+        "profile": "paper_baseline",
+        "loss": "unweighted",
+        "sampler": "natural",
+        "seed": 42,
+        "parent_recipe": "",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "0e76e15949e187d970689a62b52dc2b8d7fe6a78c682ba5c6c54bdfa8b84b859",
+      "best": {
+        "accuracy": 0.9777777777777777,
+        "macro_f1": 0.9691461087637999,
+        "weighted_f1": 0.9776093305328688,
+        "balanced_accuracy": 0.969551282051282,
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9166666666666666,
+            "f1": 0.9565217391304348,
+            "support": 24
+          },
+          "1": {
+            "precision": 0.9333333333333333,
+            "recall": 1.0,
+            "f1": 0.9655172413793104,
+            "support": 14
+          },
+          "2": {
+            "precision": 0.9615384615384616,
+            "recall": 0.9615384615384616,
+            "f1": 0.9615384615384616,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.10639090162736398,
+        "val_ce": 0.10639090162736398,
+        "epoch": 11,
+        "stage": "B",
+        "stage_epoch": 6
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E01_small_seed42",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E01_small_seed42/checkpoints/best.pt",
+      "checkpoint_sha256": "5509df8f96cc077f443fd020ae0f402ae43e6cfed2df1807752c5d3e418d02c3",
+      "elapsed_seconds": 72.51360711000007,
+      "epoch_counts": {
+        "A": 5,
+        "B": 7
+      },
+      "stage_seconds": {
+        "A": 28.679823470999963,
+        "B": 41.560381710000115
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 1521956,
+          "trainable": 594948
+        },
+        "B": {
+          "opened_modules": [
+            "features.9",
+            "features.10",
+            "features.11",
+            "features.12"
+          ],
+          "total": 1521956,
+          "trainable": 1323948
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+      },
+      "peak_vram_bytes": 235944448
+    },
+    {
+      "run_id": "E02_small_seed42",
+      "spec": {
+        "recipe": "E02",
+        "variant": "small",
+        "profile": "paper_baseline",
+        "loss": "weighted",
+        "sampler": "natural",
+        "seed": 42,
+        "parent_recipe": "",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "fbef32dd386c7f4c50a9acbb352453d7f52ffd50944c7e3625a728e2a768f4ac",
+      "best": {
+        "accuracy": 0.9851851851851852,
+        "macro_f1": 0.9794099488760919,
+        "weighted_f1": 0.9851873752841916,
+        "balanced_accuracy": 0.9799679487179488,
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9583333333333334,
+            "f1": 0.9787234042553191,
+            "support": 24
+          },
+          "1": {
+            "precision": 0.9333333333333333,
+            "recall": 1.0,
+            "f1": 0.9655172413793104,
+            "support": 14
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 0.9615384615384616,
+            "f1": 0.9803921568627451,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.10752337199670298,
+        "val_ce": 0.10752337199670298,
+        "epoch": 14,
+        "stage": "B",
+        "stage_epoch": 9
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed42",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed42/checkpoints/best.pt",
+      "checkpoint_sha256": "7f8bc40f89507efa72dca513cc4b680a81779987f164f24ef09c2c3db3940bc3",
+      "elapsed_seconds": 113.112546479,
+      "epoch_counts": {
+        "A": 5,
+        "B": 14
+      },
+      "stage_seconds": {
+        "A": 28.285720766000168,
+        "B": 81.90039244700006
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 1521956,
+          "trainable": 594948
+        },
+        "B": {
+          "opened_modules": [
+            "features.9",
+            "features.10",
+            "features.11",
+            "features.12"
+          ],
+          "total": 1521956,
+          "trainable": 1323948
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+      },
+      "peak_vram_bytes": 265280512
+    },
+    {
+      "run_id": "E03_large_seed42",
+      "spec": {
+        "recipe": "E03",
+        "variant": "large",
+        "profile": "paper_baseline",
+        "loss": "weighted",
+        "sampler": "natural",
+        "seed": 42,
+        "parent_recipe": "E02",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "4d290d8d10c0e8b23943673a1aa5eccecbcf79dea8d12ac66f558c0500313914",
+      "best": {
+        "accuracy": 0.9851851851851852,
+        "macro_f1": 0.9826652019022815,
+        "weighted_f1": 0.9849589052214155,
+        "balanced_accuracy": 0.9791666666666666,
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9166666666666666,
+            "f1": 0.9565217391304348,
+            "support": 24
+          },
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 14
+          },
+          "2": {
+            "precision": 0.9629629629629629,
+            "recall": 1.0,
+            "f1": 0.9811320754716981,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.07139345730344454,
+        "val_ce": 0.07139345730344454,
+        "epoch": 7,
+        "stage": "B",
+        "stage_epoch": 2
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42/checkpoints/best.pt",
+      "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+      "elapsed_seconds": 86.29912157600006,
+      "epoch_counts": {
+        "A": 5,
+        "B": 8
+      },
+      "stage_seconds": {
+        "A": 30.776116264000052,
+        "B": 52.19775617700043
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 4207156,
+          "trainable": 1235204
+        },
+        "B": {
+          "opened_modules": [
+            "features.13",
+            "features.14",
+            "features.15",
+            "features.16"
+          ],
+          "total": 4207156,
+          "trainable": 3401420
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_large-5c1a4163.pth"
+      },
+      "peak_vram_bytes": 450589696
+    },
+    {
+      "run_id": "E02_small_seed17",
+      "spec": {
+        "recipe": "E02",
+        "variant": "small",
+        "profile": "paper_baseline",
+        "loss": "weighted",
+        "sampler": "natural",
+        "seed": 17,
+        "parent_recipe": "",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "6c110cb7250f8397b2dc4f415ec20b0ad2e667ec1a1f755066be6ee07f0fd526",
+      "best": {
+        "accuracy": 0.9777777777777777,
+        "macro_f1": 0.9692143919299091,
+        "weighted_f1": 0.977635095428199,
+        "balanced_accuracy": 0.9703525641025641,
+        "per_class": {
+          "0": {
+            "precision": 0.9583333333333334,
+            "recall": 0.9583333333333334,
+            "f1": 0.9583333333333334,
+            "support": 24
+          },
+          "1": {
+            "precision": 0.9333333333333333,
+            "recall": 1.0,
+            "f1": 0.9655172413793104,
+            "support": 14
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 0.9230769230769231,
+            "f1": 0.96,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.11190940428663183,
+        "val_ce": 0.11190940428663183,
+        "epoch": 8,
+        "stage": "B",
+        "stage_epoch": 3
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed17",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed17/checkpoints/best.pt",
+      "checkpoint_sha256": "253ccfd0ac8d296596022ab4f14a5bc0ec71df5b0dcecf24b994f05262e9b0e2",
+      "elapsed_seconds": 88.82006729400007,
+      "epoch_counts": {
+        "A": 5,
+        "B": 10
+      },
+      "stage_seconds": {
+        "A": 27.874523124000007,
+        "B": 58.478287376999674
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 1521956,
+          "trainable": 594948
+        },
+        "B": {
+          "opened_modules": [
+            "features.9",
+            "features.10",
+            "features.11",
+            "features.12"
+          ],
+          "total": 1521956,
+          "trainable": 1323948
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+      },
+      "peak_vram_bytes": 282750976
+    },
+    {
+      "run_id": "E02_small_seed2026",
+      "spec": {
+        "recipe": "E02",
+        "variant": "small",
+        "profile": "paper_baseline",
+        "loss": "weighted",
+        "sampler": "natural",
+        "seed": 2026,
+        "parent_recipe": "",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "c919aa2e389bf66da0b4a99a089653ba55b8233774ff1e344a16a47a13e16cd7",
+      "best": {
+        "accuracy": 0.9851851851851852,
+        "macro_f1": 0.9794099488760919,
+        "weighted_f1": 0.9851873752841916,
+        "balanced_accuracy": 0.9799679487179488,
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9583333333333334,
+            "f1": 0.9787234042553191,
+            "support": 24
+          },
+          "1": {
+            "precision": 0.9333333333333333,
+            "recall": 1.0,
+            "f1": 0.9655172413793104,
+            "support": 14
+          },
+          "2": {
+            "precision": 1.0,
+            "recall": 0.9615384615384616,
+            "f1": 0.9803921568627451,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.11349056661128998,
+        "val_ce": 0.11349056661128998,
+        "epoch": 13,
+        "stage": "B",
+        "stage_epoch": 8
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed2026",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E02_small_seed2026/checkpoints/best.pt",
+      "checkpoint_sha256": "1a6086ea3a76e3566edeef3668bfbe7861638c3348e1362fef06d4ec8eb67470",
+      "elapsed_seconds": 118.20118356600005,
+      "epoch_counts": {
+        "A": 5,
+        "B": 15
+      },
+      "stage_seconds": {
+        "A": 27.826186575000065,
+        "B": 87.54950926700008
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 1521956,
+          "trainable": 594948
+        },
+        "B": {
+          "opened_modules": [
+            "features.9",
+            "features.10",
+            "features.11",
+            "features.12"
+          ],
+          "total": 1521956,
+          "trainable": 1323948
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth"
+      },
+      "peak_vram_bytes": 282750976
+    },
+    {
+      "run_id": "E03_large_seed17",
+      "spec": {
+        "recipe": "E03",
+        "variant": "large",
+        "profile": "paper_baseline",
+        "loss": "weighted",
+        "sampler": "natural",
+        "seed": 17,
+        "parent_recipe": "E02",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "cb60fc0491ac923b7f6056f5ba1ebedeba8291ee2cde5852edd75978a335bfa4",
+      "best": {
+        "accuracy": 0.9851851851851852,
+        "macro_f1": 0.9826652019022815,
+        "weighted_f1": 0.9849589052214155,
+        "balanced_accuracy": 0.9791666666666666,
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9166666666666666,
+            "f1": 0.9565217391304348,
+            "support": 24
+          },
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 14
+          },
+          "2": {
+            "precision": 0.9629629629629629,
+            "recall": 1.0,
+            "f1": 0.9811320754716981,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.047212216420168124,
+        "val_ce": 0.047212216420168124,
+        "epoch": 13,
+        "stage": "B",
+        "stage_epoch": 8
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed17",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed17/checkpoints/best.pt",
+      "checkpoint_sha256": "e287360d020c89506a459792cac7ead2ef5d126d358ca8175c87398aacf1a257",
+      "elapsed_seconds": 86.20510051199994,
+      "epoch_counts": {
+        "A": 5,
+        "B": 8
+      },
+      "stage_seconds": {
+        "A": 30.4760593110002,
+        "B": 52.22940538900002
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 4207156,
+          "trainable": 1235204
+        },
+        "B": {
+          "opened_modules": [
+            "features.13",
+            "features.14",
+            "features.15",
+            "features.16"
+          ],
+          "total": 4207156,
+          "trainable": 3401420
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_large-5c1a4163.pth"
+      },
+      "peak_vram_bytes": 469214208
+    },
+    {
+      "run_id": "E03_large_seed2026",
+      "spec": {
+        "recipe": "E03",
+        "variant": "large",
+        "profile": "paper_baseline",
+        "loss": "weighted",
+        "sampler": "natural",
+        "seed": 2026,
+        "parent_recipe": "E02",
+        "full_finetune": false
+      },
+      "status": "completed",
+      "diagnostic": false,
+      "fingerprint": "a055b1030981618d215bc2a33384f1ff783d0c0c2ea58b5b912a9a4e7f068217",
+      "best": {
+        "accuracy": 0.9851851851851852,
+        "macro_f1": 0.9826652019022815,
+        "weighted_f1": 0.9849589052214155,
+        "balanced_accuracy": 0.9791666666666666,
+        "per_class": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9166666666666666,
+            "f1": 0.9565217391304348,
+            "support": 24
+          },
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 14
+          },
+          "2": {
+            "precision": 0.9629629629629629,
+            "recall": 1.0,
+            "f1": 0.9811320754716981,
+            "support": 26
+          },
+          "3": {
+            "precision": 0.9861111111111112,
+            "recall": 1.0,
+            "f1": 0.993006993006993,
+            "support": 71
+          }
+        },
+        "loss": 0.051474646230538684,
+        "val_ce": 0.051474646230538684,
+        "epoch": 5,
+        "stage": "A",
+        "stage_epoch": 5
+      },
+      "root": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed2026",
+      "checkpoint": "/kaggle/working/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed2026/checkpoints/best.pt",
+      "checkpoint_sha256": "740650679aef29e53747d58d3fda226c134be165064e3eb79d01167aef02c033",
+      "elapsed_seconds": 78.63230722599997,
+      "epoch_counts": {
+        "A": 5,
+        "B": 7
+      },
+      "stage_seconds": {
+        "A": 30.275549693999892,
+        "B": 45.43471051900019
+      },
+      "parameters": {
+        "A": {
+          "opened_modules": [],
+          "total": 4207156,
+          "trainable": 1235204
+        },
+        "B": {
+          "opened_modules": [
+            "features.13",
+            "features.14",
+            "features.15",
+            "features.16"
+          ],
+          "total": 4207156,
+          "trainable": 3401420
+        }
+      },
+      "pretrained": {
+        "enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+        "url": "https://download.pytorch.org/models/mobilenet_v3_large-5c1a4163.pth"
+      },
+      "peak_vram_bytes": 544055296
+    }
+  ],
+  "reason": "Large minus Small mean macro-F1 = 0.00665377; Small preference margin=0.005",
+  "selection_rule": "validation mean; margin Small; fixed seed42 handoff",
+  "mapping_fingerprint": "2e368ea2fed718da2984817c43b79fbc25aded6e1d63ba448422edfd079437ef",
+  "preprocessing_fingerprint": "4270137b4a14958d41d4949a9be04946daace4b7097fa3baf2a2823ecb307b00",
+  "manifest_checksums": {
+    "train": "3f9cb2a4a79379b8ae12df7d53094259821ec89356d3cc860f5c0034d8c86e4f",
+    "validation": "0715ecd2d2d80c13ae0ab174e1d38bed875d25f9775479bf9ef9a7ef37c065cf",
+    "test": "63c850a59ae48d59c86bc8bc62806be63c880c3690fbe9e46d860370e065fb69"
+  },
+  "test_status": "not_evaluated"
+}

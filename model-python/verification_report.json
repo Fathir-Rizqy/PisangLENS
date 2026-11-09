@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "timestamp": "2026-11-07T14:11:57.424734+07:00",
+  "device": "cpu",
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.9.1+cpu",
+    "torchvision": "0.24.1+cpu",
+    "Pillow": "13.0.0",
+    "numpy": "2.5.4"
+  },
+  "test_reference": {
+    "n": 135,
+    "predicted_labels_match": 135,
+    "policy_decisions_match": 135,
+    "max_abs_logit_delta": 3.910064697265625e-05,
+    "max_abs_confidence_delta": 1.3886230831872126e-06,
+    "max_abs_calibrated_probability_delta": 1.3886230831872126e-06,
+    "accuracy": 0.9851852059364319,
+    "macro_f1": 0.9793523064799661,
+    "confusion_matrix": [
+      [
+        25,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        13,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        25,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        70
+      ]
+    ]
+  },
+  "preprocessing_reference": {
+    "n": 25,
+    "tensor_match": "exact; atol=0, rtol=0",
+    "max_abs_logit_delta": 2.193450927734375e-05,
+    "formats": [
+      "RGB",
+      "grayscale",
+      "RGBA",
+      "portrait",
+      "landscape",
+      "EXIF rotated JPEG"
+    ]
+  },
+  "numerical_tolerance": {
+    "logits_atol": 0.0001,
+    "logits_rtol": 0.0001,
+    "confidence_atol": 0.0001
+  },
+  "additional_checks": [
+    "batch_vs_single (verify_package.py)",
+    "CLI launched from unrelated working directory",
+    "JSON stdout equals output file",
+    "uncertain example preserved",
+    "missing file rejected",
+    "invalid image rejected",
+    "model asset overwrite rejected",
+    "package import works"
+  ],
+  "scope": "Reproduction of existing internal evaluation, not independent validation or new model selection."
+}

@@ -1,0 +1,41 @@
+PAKET PITCHING E03 MOBILENETV3-LARGE — PisangLENS
+Dibuat dari artefak lokal pada 7 November 2026 (Asia/Jakarta).
+
+MULAI DI SINI
+Buka KATALOG_PITCHING.html untuk melihat visual dan narasi setiap gambar.
+01_PLOT_UTAMA berisi 12 visual berurutan, PNG 2880×1620 (16:9) dan SVG.
+Untuk pitching sekitar 5 menit, pilih nomor 01, 02, 03, 05, 06, 08, dan 12.
+Untuk diskusi mentor 10–15 menit, gunakan seluruh urutan dan buka lampiran saat tanya jawab.
+
+ISI FOLDER
+01_PLOT_UTAMA       : EDA → training → evaluasi → misklasifikasi → robustness → review.
+02_PLOT_PENDUKUNG   : EDA, kurva rinci, learning rate, confusion matrix VALIDATION/TEST,
+                     ROC/PR, metrik per kelas, interval, kalibrasi, dan kandidat mirip.
+03_GAMBAR_RAW       : 3 gambar train per kelas, total 12; salinan identik cache RGB.
+04_GAMBAR_AUGMENTASI: 3 variasi dari 1 gambar train per kelas, total 12.
+05_MISKLASIFIKASI  : seluruh 2 kesalahan test, gambar individual dan CSV lengkap.
+06_GAMBAR_PREDIKSI_BENAR: contoh benar dengan confidence terendah dan median per kelas.
+07_DATA_DAN_SUMBER  : data pendukung, indeks gambar/plot, narasi, config, dan audit.
+08_CONTOH_GANGGUAN  : gambar bersih, brightness rendah, dan blur berat pada kasus yang sama.
+
+ANGKA YANG DIPAKAI
+Run terpilih: E03_large_seed42; best checkpoint epoch 7, stage B.
+Validation: akurasi 98,52%; macro-F1 98,27% (135 gambar).
+Test internal: akurasi 98,52%; macro-F1 97,94%; balanced accuracy 98,69% (135 gambar).
+133 prediksi benar / 135; 2 salah argmax.
+Policy: 133 benar diterima, 1 salah diterima, 1 uncertain; coverage 99,26%.
+Bobot inferensi: 4.207.156 parameter; 17,02 MB desimal (state_dict FP32).
+
+CARA MEMAKAI
+PNG cocok langsung dimasukkan ke slide. SVG tersedia untuk pengeditan vector.
+Gambar individual tetap 224×224; jangan mengklaim detail tambahan dari pembesaran.
+Raw berarti konfigurasi dataset raw, bukan file kamera resolusi penuh.
+Augmentasi folder 04 adalah preview baru dari fungsi asli notebook dan konfigurasi E03,
+bukan rekaman batch aktual. Seed, parent ID, split, dan hash ada di indeks_gambar.csv.
+Preview augmentasi dari proses lama tetap tersedia terpisah dalam lampiran.
+Confidence pada visual kasus memakai temperature scaling, bukan probabilitas raw.
+Narasi per visual ada di KATALOG_PITCHING.html dan indeks_plot_dan_narasi.csv.
+
+REPRODUKSI
+Skrip generate_pitching.py disertakan sebagai provenance. Untuk menghasilkan ulang visual, skrip membutuhkan artefak training, evaluasi, cache gambar, dan notebook sumber yang tidak disertakan dalam paket publik ini.
+Semua visual pitching, tabel indeks, narasi, dan data pendukung hasil akhir tersedia di folder ini.

@@ -1,0 +1,59 @@
+REVIEW MODEL UNTUK DISKUSI MENTOR
+
+1. Identitas model dan dasar pemilihan
+E03 MobileNetV3-Large seed42 sesuai selection.json dan SHA256 best.pt.
+Large dipilih dari mean validation macro-F1 tiga seed: 98,267%, dibanding
+E02 Small 97,601% (selisih 0,665 poin persentase pada split yang sama).
+Seed42 adalah handoff sesuai protokol; seed17 mempunyai validation CE lebih rendah.
+Belum ada perbandingan test Small vs Large, sehingga jangan mengklaim keunggulan test.
+
+2. EDA dan pembersihan
+937 gambar sumber: cordana 162, healthy 129, pestalotiopsis 173, sigatoka 473.
+Setelah 2 baris konflik label dikarantina dan 38 duplikat tambahan dihapus: 897.
+Data bersih: cordana 162, healthy 90, pestalotiopsis 172, sigatoka 473.
+Split: 627 train, 135 validation, 135 test; augmentasi online hanya pada train.
+Tidak ada exact content hash overlap antarsplit. Satu pasangan kandidat pHash
+dekat melintasi train–validation (00130 vs 00140); status belum ditinjau.
+Metadata identitas daun/tanaman/sesi belum tersedia, sehingga independensi belum terverifikasi.
+
+3. Training
+ImageNet pretrained; classifier 5 epoch, lalu membuka 4 modul akhir backbone.
+13 epoch tersimpan, checkpoint terpilih epoch 7. Weighted objective train berbeda
+dari CE validation; jangan memakai selisih loss sebagai ukuran langsung generalisasi.
+Akurasi train mendekati 100%, sementara validation mendatar. Ini memberi alasan
+untuk uji baru; kurva ini saja tidak membuktikan generalisasi lapangan.
+
+4. Evaluasi dan seluruh kesalahan test
+Akurasi 133/135 = 98,52%; macro-F1 97,94%. 95% CI akurasi 94,76–99,59%
+dengan asumsi foto independen. Test healthy hanya 13 gambar.
+00341: pestalotiopsis → healthy; raw confidence 81,76%, calibrated 71,29%; uncertain.
+00748: sigatoka → pestalotiopsis; raw confidence 65,46%, calibrated 59,58%; diterima.
+Semua label aktual merujuk dataset; penyebab kesalahan belum diperiksa ahli.
+File errors/index.csv asli memuat semua 135 baris; paket ini memfilter kesalahan
+berdasarkan true_label_id != predicted_label_id, sehingga tidak mencampur prediksi benar.
+
+5. Policy dan kalibrasi
+Threshold healthy 80%, penyakit 50%; fit pada validation. Coverage 134/135.
+Salah di antara prediksi diterima 1/134 (0,75%). Kasus penyakit→healthy diterima
+0/122 pada sampel ini; sebelum policy terdapat satu kasus demikian.
+Validation digunakan untuk pemilihan, kalibrasi, dan policy: ada risiko optimisme development.
+Temperature scaling memperbaiki NLL test 0,03841 → 0,03766, tetapi ECE top-label
+justru 0,01192 → 0,01482. Jangan mengklaim semua ukuran kalibrasi membaik.
+Confidence-only policy belum memverifikasi gambar di luar cakupan empat kelas.
+
+6. Robustness dan efisiensi
+Blur sigma 1,5: macro-F1 91,70%; JPEG quality 40: 94,04%.
+Hasil stress berasal dari transformasi sintetis pada 135 foto yang sama, bukan data baru.
+17.022.327 bytes = 17,02 MB desimal / sekitar 16,23 MiB; inference state_dict FP32.
+Benchmark CPU host FP32 batch 1 dan 4 threads; bukan benchmark smartphone/browser.
+Durasi training sekitar 86 detik tidak termasuk seluruh persiapan data/evaluasi.
+
+7. Arah diskusi yang disarankan
+- Review dua misklasifikasi dan satu kandidat mirip lintas train–validation bersama ahli.
+- Kumpulkan holdout lapangan baru dengan metadata daun, tanaman, lokasi, dan sesi.
+- Uji gambar di luar label serta foto blur/gelap; ukur kegagalan dan coverage.
+- Pisahkan data kalibrasi/policy dari data pemilihan model bila data mencukupi.
+- Benchmark perangkat target sebelum mengklaim kecepatan penggunaan nyata.
+
+Sumber: seluruh angka di atas dari JSON/CSV artefak lokal, bukan benchmark baru.
+Audit paket memverifikasi prediksi tersimpan, metrik, split hash, policy, dan salinan gambar.

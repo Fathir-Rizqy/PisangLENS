@@ -1,0 +1,13 @@
+﻿split,kelas,jumlah
+train,cordana,113
+train,healthy,63
+train,pestalotiopsis,120
+train,sigatoka,331
+validation,cordana,24
+validation,healthy,14
+validation,pestalotiopsis,26
+validation,sigatoka,71
+test,cordana,25
+test,healthy,13
+test,pestalotiopsis,26
+test,sigatoka,71

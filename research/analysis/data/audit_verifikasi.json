@@ -1,0 +1,339 @@
+{
+  "source": "/home/ouka/Documents/Hackathon/MobileNetV3/outputs/bananalsd_notebook_device_auto_v2",
+  "output": "/home/ouka/Documents/Hackathon/MobileNetV3/hasil_analisis",
+  "timestamp": "2026-11-07T14:14:58.897684+07:00",
+  "checks": [
+    {
+      "check": "Delapan run penuh, semuanya completed",
+      "status": "passed"
+    },
+    {
+      "check": "E00_small_seed42: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E00_small_seed42: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E00_small_seed42: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E00_small_seed42: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "E01_small_seed42: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E01_small_seed42: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E01_small_seed42: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E01_small_seed42: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed17: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed17: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed17: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed17: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed2026: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed2026: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed2026: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed2026: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed42: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed42: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed42: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E02_small_seed42: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed17: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed17: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed17: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed17: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed2026: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed2026: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed2026: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed2026: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed42: identitas dan label validation",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed42: argmax logit dan probabilitas",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed42: metrik hitung ulang",
+      "status": "passed"
+    },
+    {
+      "check": "E03_large_seed42: epoch checkpoint cocok history",
+      "status": "passed"
+    },
+    {
+      "check": "Finalis small: tiga seed yang sama",
+      "status": "passed"
+    },
+    {
+      "check": "Finalis large: tiga seed yang sama",
+      "status": "passed"
+    },
+    {
+      "check": "Seleksi sesuai margin Small yang sudah ditetapkan",
+      "status": "passed"
+    },
+    {
+      "check": "Split train/validation: tidak ada image_id atau exact content hash overlap",
+      "status": "passed"
+    },
+    {
+      "check": "Split train/test: tidak ada image_id atau exact content hash overlap",
+      "status": "passed"
+    },
+    {
+      "check": "Split validation/test: tidak ada image_id atau exact content hash overlap",
+      "status": "passed"
+    },
+    {
+      "check": "Manifest train: checksum dan ukuran",
+      "status": "passed"
+    },
+    {
+      "check": "Manifest validation: checksum dan ukuran",
+      "status": "passed"
+    },
+    {
+      "check": "Manifest test: checksum dan ukuran",
+      "status": "passed"
+    },
+    {
+      "check": "Test: image_id dan label cocok manifest",
+      "status": "passed"
+    },
+    {
+      "check": "Test: accuracy, macro-F1, balanced accuracy, confusion matrix",
+      "status": "passed"
+    },
+    {
+      "check": "Checkpoint terpilih: checksum dan identitas prediksi",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum inference_contract.json",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum model_state_dict.pt",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum test.csv",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum label_mapping.json",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum provenance.json",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum validation_logits.csv",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum preprocessing.resolved.json",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum model_config.json",
+      "status": "passed"
+    },
+    {
+      "check": "Handoff: checksum selection.json",
+      "status": "passed"
+    },
+    {
+      "check": "Policy: coverage dan selective risk",
+      "status": "passed"
+    },
+    {
+      "check": "Stress brightness_0.85: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress brightness_0.7: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress brightness_0.55: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress blur_0.5: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress blur_1: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress blur_1.5: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress jpeg_80: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress jpeg_60: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress jpeg_40: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress rotation_5: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress rotation_10: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    },
+    {
+      "check": "Stress rotation_15: macro-F1 dan pasangan gambar",
+      "status": "passed"
+    }
+  ],
+  "all_passed": true,
+  "source_sha256": {
+    "label_mapping.json": "a8c20b8f2fe39a0f9d7ae3009f553897c200dc4f1302bcaac20610496fa3a173",
+    "training/selection.json": "d667c48945562c24461c68224d0d55725e232ef78ede5dbdfb488ee3b10df6b3",
+    "config.resolved.json": "5d041a1871f668b4d426b80da36a1fc9c64b4963617c92b894cc9b224e97b55a",
+    "training/E00_small_seed42/summary.json": "72d8b542b9521f83968d3f19ba9f207a795e3c0b748285f5f172013f70cf8180",
+    "training/E00_small_seed42/metrics.csv": "ad6ff3ca3f1171f7ab4b650a9646565e19b184a7b5e86f8f62dc846b3273ae35",
+    "training/E00_small_seed42/validation/logits.csv": "9a107b4e294a0809da6c81e0f7ee55d94f331738d0e0233cabbfde8659950dd1",
+    "training/E01_small_seed42/summary.json": "82e65a6e234e5473bba4c5584a63aa9ad0afac3fbdc2f4fa023e678a6e9f2ed0",
+    "training/E01_small_seed42/metrics.csv": "d0cb7bdf9ee7f4c9357e038dbdd40adfbe7ee837199479c72896a2040d358d1b",
+    "training/E01_small_seed42/validation/logits.csv": "672d13cbe2e33e1a8cf6178f8a4477a38e37e605ffb50c8a745610f93661a252",
+    "training/E02_small_seed17/summary.json": "8f59f9c8d37a3c05a255238e358268e830ab0d8d58655f9a224259e59432bfe0",
+    "training/E02_small_seed17/metrics.csv": "3c33e1ca1fd64c7df42575bd980a0cbf22bcf1e362a867734b1cedd65f201f5d",
+    "training/E02_small_seed17/validation/logits.csv": "6f2e60ea4cfecd3ef2140d325e83d87eb5048ec1e1a5d259f39259ebb7b63fd9",
+    "training/E02_small_seed2026/summary.json": "33ce3bf16ce27094ee8495cfed1454bceee4d79d3d4c9472446355e3f7962751",
+    "training/E02_small_seed2026/metrics.csv": "983c939cd5adc96c203f1b60cc14cb27fdd40b9191bf26588e1a4073c63b3d61",
+    "training/E02_small_seed2026/validation/logits.csv": "dc9669499eeaa0b2b6b0bad377ce1168cc5053634b058d34d5a873e9abd6ba31",
+    "training/E02_small_seed42/summary.json": "2a29f0b16e998da4c283b56346d62b82ba2b4aa43635b1ff8e6c55d7318cb952",
+    "training/E02_small_seed42/metrics.csv": "995052c0ee3604536bbc3b68590c8c6a3865a980c8b2407be0eec6b7299ecd02",
+    "training/E02_small_seed42/validation/logits.csv": "121429e02d526af84134cb813183b8d0e0781e159b45295eae1fe02fba9d3e77",
+    "training/E03_large_seed17/summary.json": "60c53653adc7f74115b916e62e1f84eefab0774012e422dac8314f44d5be32d7",
+    "training/E03_large_seed17/metrics.csv": "36c2a09357b68b436db2b9b3a587893e04452220dd2f01188b8662345cb5934d",
+    "training/E03_large_seed17/validation/logits.csv": "39791df27f15473bcdc788396c05ef85be0256224f2c50680e23bf7ae4cbfc4d",
+    "training/E03_large_seed2026/summary.json": "e1e1b5a84a4f0c367682781b057ce1cbad7e1b8693af9a2bb094333ed95d8cc3",
+    "training/E03_large_seed2026/metrics.csv": "ae6def128013373e435d63586e6e2161934900dd9edbb3f5f0e304b65576e75d",
+    "training/E03_large_seed2026/validation/logits.csv": "230163431d76529f93ed647be180a04b7ded0fd73d51b79494d7fb6f46117e33",
+    "training/E03_large_seed42/summary.json": "7822c0fa696dde0f341cb41c03b1df77223403d15b9b6708642605b33ca4a965",
+    "training/E03_large_seed42/metrics.csv": "f08a69226de2063a80e1713ed941def0b84f5cde24157f607448e4dd33c83d6e",
+    "training/E03_large_seed42/validation/logits.csv": "fa660200969059adb24000e344afcf7ba735d7b227dcdfbe3a9186379a202e35",
+    "evaluation/internal/predictions.csv": "9398cd54f5316c97641a50165f6f29fbc58a3d7f0fe23f2352081ae5b0389019",
+    "evaluation/internal/metrics.json": "64ae4feb6d1b1645a08c888f3ec40ddce07cfb1023cfc43a9268cfc87cf5892a",
+    "evaluation/internal/confidence_intervals.json": "51cd258cf9a2ea439b7d05394407fb7ca482325e353daaf062b6d6e3a756ccd0",
+    "reports/split_summary.json": "4c0deba85db662ff4bd99136efa3739c1b0f47c6b9d89a0cb53530e9efcb2c18",
+    "reports/data_quality_report.json": "59546e8760f2f66f570a331578ce589fed046a5790d502ec2ac0b44ca69ee8b6",
+    "evaluation/stress/metrics.csv": "6dba35af91daa96f2472e788fc2e34e7968a5520e24ed20403ba1735a4af8c02",
+    "evaluation/efficiency/host_benchmark.json": "4be6f12eed763c3e79d3f2e511cb6b4e05fdf333f933e587d88ef359c555fa40",
+    "evaluation/calibration/temperature.json": "bf997d920672e7a643f9c2c43123980c534ec04e9e03473407d6b4bac975608f",
+    "evaluation/policy/decision_policy.json": "30bbad06fddcd04f1826ff12e0421ead4e56d8251537d72da776a039b6f8c9c4",
+    "manifests/train.csv": "3f9cb2a4a79379b8ae12df7d53094259821ec89356d3cc860f5c0034d8c86e4f",
+    "manifests/validation.csv": "0715ecd2d2d80c13ae0ab174e1d38bed875d25f9775479bf9ef9a7ef37c065cf",
+    "manifests/test.csv": "63c850a59ae48d59c86bc8bc62806be63c880c3690fbe9e46d860370e065fb69",
+    "training/handoff/artifact_checksums.json": "ae1b3ea0b7b7d802f5489cf61c555caf695a210c0a83cf41332e35b7c898447b",
+    "evaluation/stress/predictions/brightness_0.85.csv": "32f88d3bccdbba5e5ebbd5028a3531371024939a82d89fcf032c3f88a3c4251d",
+    "evaluation/stress/predictions/brightness_0.7.csv": "a9cc5492735dec59946363b625a1ac26a9e8f98e3bdd79cf406a72c52e333eb3",
+    "evaluation/stress/predictions/brightness_0.55.csv": "33a43d86b7d583337a7d80a119b6aefa5c211b25c7b157fb5f1541f9dedd188b",
+    "evaluation/stress/predictions/blur_0.5.csv": "0dc0868825bc6b9d258cca68ef215cf8397f5adb1115dc64e874587dcad0af7d",
+    "evaluation/stress/predictions/blur_1.0.csv": "ed2a873debbe071ebd56409780697fb7ff6b27b7808e0dddd283f07c151e9bda",
+    "evaluation/stress/predictions/blur_1.5.csv": "2543cc676b889f50ccc49f73a77701f367478c51df6c1334318e949acf0e1194",
+    "evaluation/stress/predictions/jpeg_80.csv": "bfc49ebde7b3a5847e33328229fa7326213ea988068da5b15523bf43a46dede5",
+    "evaluation/stress/predictions/jpeg_60.csv": "4bc45c0d4d3c69cc8cb95cd67b4474da064439b178cb20781cc21c36da6c2c6a",
+    "evaluation/stress/predictions/jpeg_40.csv": "40e0f8b0226814bfacfe9065117d9fc39c133c6939cc6db00752d3fe21e6ddf4",
+    "evaluation/stress/predictions/rotation_5.csv": "8d9242d3d6b89ddd1e51613be16f6217ba5d2eb5e7fb64234f046e1bdf8375af",
+    "evaluation/stress/predictions/rotation_10.csv": "3ac3483294b6a200c5df52ab8986dc29c04c7a0ae67803ae10dfa489204c223c",
+    "evaluation/stress/predictions/rotation_15.csv": "b2bb134298d1c69e7cf74394a48831d631bc1a651ba93336b95354e171d5defc",
+    "augmentation_samples/preview.png": "753a8c181604476fe0db9aa957ab33c62e2ab037f2a9a8db8e8b78e6ca8fa121",
+    "evaluation/efficiency/raw_timings.csv": "7e57ff384042bdcb4d901179f659fa9dcab4fcde0b2b136c3873d26f94359b07"
+  },
+  "plots_total": 45,
+  "regenerated_plots_png_and_svg": 44,
+  "copied_original_preview": 1,
+  "notes": [
+    "Verification covers saved predictions and metadata, not a fresh inference run.",
+    "Original model files and notebook are preserved."
+  ]
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="112" viewBox="0 0 240 112">
+  <title>Ilustrasi daun pisang</title>
+  <view id="sehat" viewBox="0 0 240 112"/>
+  <view id="hawar" viewBox="0 112 240 112"/>
+  <view id="sigatoka" viewBox="0 224 240 112"/>
+  <view id="cordana" viewBox="0 336 240 112"/>
+  <defs>
+    <g id="leaf">
+      <path d="M34 80C53 25 116 9 205 25c-20 47-79 73-171 55Z" fill="#4e8b55"/>
+      <path d="M24 91c50-32 108-49 181-66M65 69l8-24m18 13 13-27m18 17 15-25m-57 41 26 17m6-29 27 18m6-27 23 13" stroke="#d6eab9" stroke-width="2" fill="none"/>
+    </g>
+  </defs>
+  <use href="#leaf"/>
+  <g transform="translate(0 112)">
+    <use href="#leaf"/>
+    <path d="M204 25c-7 18-19 32-38 42l-15-12 8-9-5-11 17-13c12 0 23 1 33 3Z" fill="#955536"/>
+  </g>
+  <g transform="translate(0 224)">
+    <use href="#leaf"/>
+    <path d="m81 54 10-7m12 17 13-7m15-18 12-6m8 19 15-7" stroke="#775034" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(0 336)">
+    <use href="#leaf"/>
+    <g fill="#c8a078" stroke="#775034" stroke-width="3">
+      <ellipse cx="93" cy="54" rx="9" ry="6"/>
+      <ellipse cx="120" cy="66" rx="10" ry="7"/>
+      <ellipse cx="148" cy="39" rx="10" ry="6"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analisis hasil MobileNetV3 · PisangLENS</title>
+<style>
+:root{color-scheme:light;--navy:#20384D;--teal:#00877F;--muted:#587084}*{box-sizing:border-box}
+body{margin:0;background:#f2f6f8;color:var(--navy);font:16px/1.7 system-ui,sans-serif}
+main{max-width:1160px;margin:auto;padding:48px 30px 80px}h1{font-size:42px;line-height:1.15;margin:12px 0 18px}
+h2{font-size:25px;margin:38px 0 14px}h3{font-size:19px;margin:24px 0 10px}p{margin:12px 0}
+.eyebrow{color:var(--teal);font-size:13px;font-weight:750;letter-spacing:1.4px;text-transform:uppercase}
+.lead{font-size:20px;max-width:950px}.card,section{background:white;padding:26px 30px;border:1px solid #dce5eb;border-radius:14px;margin:20px 0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0}
+.kpi{background:white;border-top:4px solid var(--teal);padding:18px;border-radius:8px;border-bottom:1px solid #dce5eb}
+.kpi strong{display:block;font-size:29px}.kpi span,small,figcaption{color:var(--muted);font-size:13px}
+.note{background:#f0f7f6;border-left:4px solid var(--teal);padding:14px 18px;border-radius:5px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:16px 0}th,td{padding:11px 10px;text-align:left;border-bottom:1px solid #e2e8ec;white-space:nowrap}
+th{background:#edf4f6}.scroll{overflow-x:auto}figure{margin:22px 0}img{width:100%;height:auto;border-radius:7px}
+a{color:#006e79;text-decoration-thickness:1px;text-underline-offset:3px}code{overflow-wrap:anywhere;font-size:.9em}
+summary{cursor:pointer;font-weight:650;padding:13px 0}details{border-bottom:1px solid #dce5eb}li{margin:7px 0}
+@media(max-width:750px){main{padding:26px 16px}h1{font-size:32px}.kpis{grid-template-columns:repeat(2,1fr)}section{padding:20px}}
+@media print{body{background:white}main{padding:0}section{break-inside:avoid}details{display:block}}
+</style><main>
+<div class="eyebrow">PisangLENS · Analisis artefak eksperimen</div>
+<h1>MobileNetV3-Large menjadi pilihan utama pada hasil internal ini.</h1>
+<p class="lead">Pilih resep <strong>E03</strong> dan gunakan checkpoint <strong>E03_large_seed42</strong> yang sudah dipilih oleh protokol.
+Large unggul <strong>0.665 poin persentase</strong> atas E02 Small pada rata-rata macro-F1 tiga seed validation.</p>
+<p><small>Dibuat 07 November 2026, 14:14 WIB · Analisis dari hasil tersimpan, tanpa training atau fitting ulang.</small></p>
+<div class="kpis">
+<div class="kpi"><strong>98.27%</strong><span>Macro-F1 validation · mean 3 seed</span></div>
+<div class="kpi"><strong>98.52%</strong><span>Akurasi test · 133 / 135 benar</span></div>
+<div class="kpi"><strong>97.94%</strong><span>Macro-F1 test · seed 42 saja</span></div>
+<div class="kpi"><strong>4.21 juta</strong><span>Parameter model Large</span></div>
+</div>
+<p class="note">Keunggulannya tipis dan belum terbukti secara independen. Model lain belum memiliki hasil test pembanding di folder ini.
+Kesimpulan “terbaik” memakai validation, sedangkan test mengukur checkpoint final yang sudah dipilih.</p>
+<section><h2>Dasar rekomendasi</h2>
+<p>Finalis E02 Small mencapai <strong>97.60% ± 0.59 pp</strong>,
+sedangkan E03 Large mencapai <strong>98.27% ± 0.00 pp</strong> (mean ± SD sampel dari seed 17, 42, 2026).
+Selisih 0.665 pp melewati margin preferensi Small 0.50 pp yang telah ditetapkan dalam notebook.</p>
+<p>Nilai F1 Large sama di tiga seed pada split ini. Hal itu hanya menunjukkan stabilitas skor yang teramati;
+probabilitas dan CE tetap berbeda. Dengan aturan urut macro-F1 lalu CE, <strong>E03_large_seed17</strong> menjadi run numerik teratas
+(CE 0.0472). Handoff tetap seed 42 sesuai protokol yang sudah ada; test seed 17 belum tersedia.</p>
+<figure><a href="plots/01_perbandingan/ringkasan_model.png"><img loading="lazy" src="plots/01_perbandingan/ringkasan_model.png" alt="Rata-rata dan simpangan baku antarseed untuk finalis."></a><figcaption>Rata-rata dan simpangan baku antarseed untuk finalis.</figcaption></figure>
+<div class="scroll"><table class="dataframe metrics">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Run</th>
+      <th>Macro-F1 val</th>
+      <th>Accuracy val</th>
+      <th>Balanced acc val</th>
+      <th>CE val ↓</th>
+      <th>Epoch terbaik</th>
+      <th>Test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>E03_large_seed17</td>
+      <td>98.27%</td>
+      <td>98.52%</td>
+      <td>97.92%</td>
+      <td>0.0472</td>
+      <td>13</td>
+      <td>belum dievaluasi</td>
+    </tr>
+    <tr>
+      <td>E03_large_seed2026</td>
+      <td>98.27%</td>
+      <td>98.52%</td>
+      <td>97.92%</td>
+      <td>0.0515</td>
+      <td>5</td>
+      <td>belum dievaluasi</td>
+    </tr>
+    <tr>
+      <td>E03_large_seed42 · handoff</td>
+      <td>98.27%</td>
+      <td>98.52%</td>
+      <td>97.92%</td>
+      <td>0.0714</td>
+      <td>7</td>
+      <td>tersedia</td>
+    </tr>
+    <tr>
+      <td>E02_small_seed42</td>
+      <td>97.94%</td>
+      <td>98.52%</td>
+      <td>98.00%</td>
+      <td>0.1075</td>
+      <td>14</td>
+      <td>belum dievaluasi</td>
+    </tr>
+    <tr>
+      <td>E02_small_seed2026</td>
+      <td>97.94%</td>
+      <td>98.52%</td>
+      <td>98.00%</td>
+      <td>0.1135</td>
+      <td>13</td>
+      <td>belum dievaluasi</td>
+    </tr>
+    <tr>
+      <td>E02_small_seed17</td>
+      <td>96.92%</td>
+      <td>97.78%</td>
+      <td>97.04%</td>
+      <td>0.1119</td>
+      <td>8</td>
+      <td>belum dievaluasi</td>
+    </tr>
+    <tr>
+      <td>E01_small_seed42</td>
+      <td>96.91%</td>
+      <td>97.78%</td>
+      <td>96.96%</td>
+      <td>0.1064</td>
+      <td>11</td>
+      <td>belum dievaluasi</td>
+    </tr>
+    <tr>
+      <td>E00_small_seed42</td>
+      <td>96.91%</td>
+      <td>97.78%</td>
+      <td>96.96%</td>
+      <td>0.1092</td>
+      <td>9</td>
+      <td>belum dievaluasi</td>
+    </tr>
+  </tbody>
+</table></div>
+<p>Small tetap masuk akal jika kapasitas model menjadi prioritas: 1,521,956 parameter dibanding 4,207,156 pada Large,
+atau <strong>63.8% lebih sedikit</strong>. Latency Small belum diukur sehingga keunggulan kecepatannya belum dapat dinyatakan.</p>
+<p>Pada seed 42, balanced accuracy Small 98.00% sedikit lebih tinggi daripada Large
+97.92%. Recall Cordana Small 95,83% vs Large 91,67%; recall Pestalotiopsis Small 96,15% vs Large 100%.
+Jadi Large tidak unggul pada setiap kelas dan metrik.</p>
+<p>Bootstrap berpasangan validation seed 42 (2.000 replikasi, stratifikasi kelas) menghasilkan selisih macro-F1
+0.326 pp dengan interval deskriptif 95% [-3.03, 3.95] pp.
+Interval ini melintasi nol dan dihitung setelah seleksi pada validation yang sama; bukan CI selisih mean tiga seed atau pengujian independen.</p>
+</section>
+<section><h2>Hasil test checkpoint final</h2>
+<p>Test berisi 135 gambar: akurasi <strong>98.52%</strong>, macro-F1 <strong>97.94%</strong>,
+balanced accuracy <strong>98.69%</strong>. Baseline selalu memilih Sigatoka hanya memperoleh
+akurasi 52.59% dan macro-F1 17.23%.</p>
+<p>Interval 95% tersimpan: akurasi [94.76, 99.59]% (Wilson), macro-F1
+[94.61, 100.00]% (stratified image bootstrap). Interval mengasumsikan gambar independen; metadata tanaman/sesi belum tersedia.</p>
+<div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Kelas</th>
+      <th>n test</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cordana</td>
+      <td>25</td>
+      <td>100.00%</td>
+      <td>100.00%</td>
+      <td>100.00%</td>
+    </tr>
+    <tr>
+      <td>Healthy</td>
+      <td>13</td>
+      <td>92.86%</td>
+      <td>100.00%</td>
+      <td>96.30%</td>
+    </tr>
+    <tr>
+      <td>Pestalotiopsis</td>
+      <td>26</td>
+      <td>96.15%</td>
+      <td>96.15%</td>
+      <td>96.15%</td>
+    </tr>
+    <tr>
+      <td>Sigatoka</td>
+      <td>71</td>
+      <td>100.00%</td>
+      <td>98.59%</td>
+      <td>99.29%</td>
+    </tr>
+  </tbody>
+</table></div>
+<figure><a href="plots/03_evaluasi/confusion_matrix_test.png"><img loading="lazy" src="plots/03_evaluasi/confusion_matrix_test.png" alt="Confusion matrix test · E03 Large seed 42"></a><figcaption>Confusion matrix test · E03 Large seed 42</figcaption></figure>
+<p>Dua kesalahan: satu <strong>Pestalotiopsis → Healthy</strong>, dan satu <strong>Sigatoka → Pestalotiopsis</strong>.
+Aturan confidence yang dipasang pada validation menandai kesalahan pertama sebagai uncertain, sedangkan kesalahan kedua tetap diterima.</p>
+<p>Policy menerima 134/135 gambar (coverage 99.26%), dengan 1/134 prediksi diterima salah
+(selective risk 0.75%). Pada argmax murni terdapat 1/122 gambar sakit yang diprediksi healthy;
+setelah policy, 0/122 mendapat keputusan healthy yang diterima. Batas atas interval Wilson 95% untuk angka terakhir masih
+3.05%, sehingga hasil nol pada sampel ini tidak berarti risiko nol.</p>
+<figure><a href="plots/03_evaluasi/galeri_kesalahan.png"><img loading="lazy" src="plots/03_evaluasi/galeri_kesalahan.png" alt="Kedua kesalahan argmax pada test."></a><figcaption>Kedua kesalahan argmax pada test.</figcaption></figure>
+</section>
+<section><h2>Training dan kalibrasi</h2>
+<p>Large seed 42 memilih epoch 7 dari 13 epoch, dengan CE validation
+0.0714. Di epoch akhir, akurasi train 100.00% dan CE validation 0.0777;
+akurasi validation tidak terus naik. Ini konsisten dengan manfaat early stopping/checkpoint terbaik dan kemungkinan overfit pada epoch lanjutan.
+Objective weighted train dan CE biasa validation berbeda definisi, sehingga jarak kedua kurva loss tidak boleh ditafsirkan langsung sebagai besarnya overfit.</p>
+<figure><a href="plots/02_training/E03_large_seed42/kurva_training.png"><img loading="lazy" src="plots/02_training/E03_large_seed42/kurva_training.png" alt="Learning curves E03_large_seed42."></a><figcaption>Learning curves E03_large_seed42.</figcaption></figure>
+<p>Temperature scaling T=1.3769 menurunkan NLL test 0.0384 → 0.0377
+dan Brier 0.0189 → 0.0175, tetapi ECE naik
+1.19% → 1.48%. Kalibrasi tidak membaik pada semua metrik.
+Validation yang sama dipakai untuk seleksi, kalibrasi, dan policy, sehingga hasil development berpotensi optimistis.</p>
+</section>
+<section><h2>Ketahanan gambar</h2>
+<p>Gangguan paling merugikan yang diuji adalah <strong>blur radius 1,5</strong>: macro-F1 turun dari 97.94% menjadi
+91.70% (turun 6.23 pp). JPEG kualitas 40 menurunkan macro-F1 menjadi 94,04%
+dan recall Cordana menjadi 84%. Kecerahan pada level yang diuji mempertahankan label prediksi.</p>
+<figure><a href="plots/04_robustness/gangguan_gambar.png"><img loading="lazy" src="plots/04_robustness/gangguan_gambar.png" alt="Macro-F1 dan coverage pada 12 kondisi stress."></a><figcaption>Macro-F1 dan coverage pada 12 kondisi stress.</figcaption></figure>
+<p>Rotasi 10° menghasilkan satu keputusan sakit→healthy yang diterima. Beberapa gangguan justru memperbaiki skor pada sampel ini;
+hal tersebut bukan dasar untuk memilih ulang model atau menjanjikan perbaikan pada data lain. Semua stress memakai turunan dari test yang sama.</p>
+</section>
+<section><h2>Data dan batas bukti</h2>
+<p>Dari 937 baris sumber, 2 baris konflik label dikarantina dan 38 duplikasi tambahan dikeluarkan; tersisa 897 gambar:
+627 train, 135 validation, 135 test. Audit ini mengonfirmasi tidak ada image_id atau exact content hash yang beririsan antarsplit.
+Sigatoka mendominasi 473/897 gambar (52,73%), sehingga macro-F1 menjadi dasar utama pembandingan.</p>
+<figure><a href="plots/05_dataset/distribusi_kelas_dan_split.png"><img loading="lazy" src="plots/05_dataset/distribusi_kelas_dan_split.png" alt="Distribusi kelas sebelum/sesudah cleaning dan per split."></a><figcaption>Distribusi kelas sebelum/sesudah cleaning dan per split.</figcaption></figure>
+<p>Ada <strong>satu pasangan kandidat gambar mirip lintas train–validation</strong> yang belum ditinjau manual.
+Statusnya kandidat, sehingga belum cukup untuk menyimpulkan kebocoran. Kesamaan tanaman/daun/sesi pengambilan juga belum dapat diaudit dari metadata yang tersedia.
+Test healthy hanya berisi 13 gambar; recall 100% untuk kelas ini masih memiliki batas bawah Wilson sekitar 77,19%.</p>
+<p>Evaluasi lapangan Indonesia, data di luar kelas yang didukung, dan aturan kualitas berlabel manusia belum tersedia.
+Hasil ini mendukung pemilihan model untuk eksperimen/prototipe berikutnya. Bukti untuk menyatakan kesiapan lapangan belum tersedia.
+Pengembangan setelah melihat test perlu holdout baru yang dipisahkan berdasarkan kebun, tanaman, atau sesi.</p>
+</section>
+<section><h2>Efisiensi dan artefak yang dipakai</h2>
+<p>Large mempunyai 4,207,156 parameter dan bobot state_dict 17.02 MB
+(16.23 MiB, optimizer tidak termasuk). Median dari median tiga sesi CPU host adalah
+24.74 ms untuk forward model dan 28.36 ms untuk pipeline total, batch 1 FP32 dengan 4 threads dan warm OS cache.
+Angka ini berasal dari benchmark tersimpan dan tidak mewakili latency HP.</p>
+<p>Gunakan Checkpoint training lengkap tidak disertakan dalam paket publik ini. Paket inference terpilih tersedia di
+<a href="../../model-python/README.txt">dokumentasi model</a>, dengan
+<a href="../../model-python/model_state_dict.pt">bobot state_dict</a>, label mapping, dan preprocessing.
+SHA-256 checkpoint: <code>fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0</code>.</p>
+<p>Metrik semua run dihitung ulang dari logit/prediksi; epoch checkpoint dicocokkan dengan history; checksum manifest,
+checkpoint terpilih, dan seluruh berkas handoff diverifikasi. Berkas training/selection.json masih bertuliskan test_status=not_evaluated
+karena dibuat sebelum tahap test; hasil test yang selesai terdapat di evaluation/internal. Artefak sumber tidak diubah.</p>
+</section>
+<section><h2>Galeri seluruh plot</h2><p>45 gambar tersusun per topik. Grafik yang dibuat ulang tersedia sebagai PNG 300 dpi dan SVG;
+preview augmentasi asli disertakan sebagai PNG. Klik nama untuk membuka gambar penuh.</p><details><summary>Perbandingan model (5)</summary><ul><li><a href="plots/01_perbandingan/peringkat_semua_run.png">Peringkat semua run berdasarkan macro-F1 validation, lalu CE.</a> · <a href="plots/01_perbandingan/peringkat_semua_run.svg">SVG</a></li><li><a href="plots/01_perbandingan/ringkasan_model.png">Rata-rata dan simpangan baku antarseed untuk finalis.</a> · <a href="plots/01_perbandingan/ringkasan_model.svg">SVG</a></li><li><a href="plots/01_perbandingan/ablasi_seed42.png">Ablasi resep pada seed 42.</a> · <a href="plots/01_perbandingan/ablasi_seed42.svg">SVG</a></li><li><a href="plots/01_perbandingan/recall_semua_run.png">Recall per kelas dari delapan model pada validation.</a> · <a href="plots/01_perbandingan/recall_semua_run.svg">SVG</a></li><li><a href="plots/01_perbandingan/parameter_dan_training.png">Tradeoff parameter dan waktu training yang teramati.</a> · <a href="plots/01_perbandingan/parameter_dan_training.svg">SVG</a></li></ul></details><details><summary>Training seluruh run (25)</summary><ul><li><a href="plots/02_training/E00_small_seed42/kurva_training.png">Learning curves E00_small_seed42.</a> · <a href="plots/02_training/E00_small_seed42/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E00_small_seed42/learning_rate.png">Learning rate E00_small_seed42.</a> · <a href="plots/02_training/E00_small_seed42/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E00_small_seed42/confusion_matrix_validation.png">Confusion matrix validation · E00_small_seed42</a> · <a href="plots/02_training/E00_small_seed42/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/E01_small_seed42/kurva_training.png">Learning curves E01_small_seed42.</a> · <a href="plots/02_training/E01_small_seed42/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E01_small_seed42/learning_rate.png">Learning rate E01_small_seed42.</a> · <a href="plots/02_training/E01_small_seed42/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E01_small_seed42/confusion_matrix_validation.png">Confusion matrix validation · E01_small_seed42</a> · <a href="plots/02_training/E01_small_seed42/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed17/kurva_training.png">Learning curves E02_small_seed17.</a> · <a href="plots/02_training/E02_small_seed17/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed17/learning_rate.png">Learning rate E02_small_seed17.</a> · <a href="plots/02_training/E02_small_seed17/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed17/confusion_matrix_validation.png">Confusion matrix validation · E02_small_seed17</a> · <a href="plots/02_training/E02_small_seed17/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed2026/kurva_training.png">Learning curves E02_small_seed2026.</a> · <a href="plots/02_training/E02_small_seed2026/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed2026/learning_rate.png">Learning rate E02_small_seed2026.</a> · <a href="plots/02_training/E02_small_seed2026/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed2026/confusion_matrix_validation.png">Confusion matrix validation · E02_small_seed2026</a> · <a href="plots/02_training/E02_small_seed2026/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed42/kurva_training.png">Learning curves E02_small_seed42.</a> · <a href="plots/02_training/E02_small_seed42/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed42/learning_rate.png">Learning rate E02_small_seed42.</a> · <a href="plots/02_training/E02_small_seed42/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E02_small_seed42/confusion_matrix_validation.png">Confusion matrix validation · E02_small_seed42</a> · <a href="plots/02_training/E02_small_seed42/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed17/kurva_training.png">Learning curves E03_large_seed17.</a> · <a href="plots/02_training/E03_large_seed17/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed17/learning_rate.png">Learning rate E03_large_seed17.</a> · <a href="plots/02_training/E03_large_seed17/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed17/confusion_matrix_validation.png">Confusion matrix validation · E03_large_seed17</a> · <a href="plots/02_training/E03_large_seed17/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed2026/kurva_training.png">Learning curves E03_large_seed2026.</a> · <a href="plots/02_training/E03_large_seed2026/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed2026/learning_rate.png">Learning rate E03_large_seed2026.</a> · <a href="plots/02_training/E03_large_seed2026/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed2026/confusion_matrix_validation.png">Confusion matrix validation · E03_large_seed2026</a> · <a href="plots/02_training/E03_large_seed2026/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed42/kurva_training.png">Learning curves E03_large_seed42.</a> · <a href="plots/02_training/E03_large_seed42/kurva_training.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed42/learning_rate.png">Learning rate E03_large_seed42.</a> · <a href="plots/02_training/E03_large_seed42/learning_rate.svg">SVG</a></li><li><a href="plots/02_training/E03_large_seed42/confusion_matrix_validation.png">Confusion matrix validation · E03_large_seed42</a> · <a href="plots/02_training/E03_large_seed42/confusion_matrix_validation.svg">SVG</a></li><li><a href="plots/02_training/ikhtisar_macro_f1.png">Perkembangan macro-F1 validation semua eksperimen.</a> · <a href="plots/02_training/ikhtisar_macro_f1.svg">SVG</a></li></ul></details><details><summary>Evaluasi test (6)</summary><ul><li><a href="plots/03_evaluasi/confusion_matrix_test.png">Confusion matrix test · E03 Large seed 42</a> · <a href="plots/03_evaluasi/confusion_matrix_test.svg">SVG</a></li><li><a href="plots/03_evaluasi/performa_dan_interval.png">Performa test per kelas dan interval ketidakpastian.</a> · <a href="plots/03_evaluasi/performa_dan_interval.svg">SVG</a></li><li><a href="plots/03_evaluasi/roc_dan_precision_recall.png">ROC dan precision–recall dari prediksi test tersimpan.</a> · <a href="plots/03_evaluasi/roc_dan_precision_recall.svg">SVG</a></li><li><a href="plots/03_evaluasi/kalibrasi.png">Kalibrasi confidence sebelum dan sesudah temperature scaling.</a> · <a href="plots/03_evaluasi/kalibrasi.svg">SVG</a></li><li><a href="plots/03_evaluasi/keputusan_dan_confidence.png">Hasil policy confidence dan distribusi confidence test.</a> · <a href="plots/03_evaluasi/keputusan_dan_confidence.svg">SVG</a></li><li><a href="plots/03_evaluasi/galeri_kesalahan.png">Kedua kesalahan argmax pada test.</a> · <a href="plots/03_evaluasi/galeri_kesalahan.svg">SVG</a></li></ul></details><details><summary>Robustness (2)</summary><ul><li><a href="plots/04_robustness/gangguan_gambar.png">Macro-F1 dan coverage pada 12 kondisi stress.</a> · <a href="plots/04_robustness/gangguan_gambar.svg">SVG</a></li><li><a href="plots/04_robustness/recall_per_kelas.png">Recall setiap kelas pada seluruh kondisi gangguan.</a> · <a href="plots/04_robustness/recall_per_kelas.svg">SVG</a></li></ul></details><details><summary>Dataset (6)</summary><ul><li><a href="plots/05_dataset/distribusi_kelas_dan_split.png">Distribusi kelas sebelum/sesudah cleaning dan per split.</a> · <a href="plots/05_dataset/distribusi_kelas_dan_split.svg">SVG</a></li><li><a href="plots/05_dataset/kualitas_gambar.png">Distribusi kualitas gambar pada dataset bersih.</a> · <a href="plots/05_dataset/kualitas_gambar.svg">SVG</a></li><li><a href="plots/05_dataset/histogram_rgb_sumber.png">Histogram RGB sumber sebelum cleaning.</a> · <a href="plots/05_dataset/histogram_rgb_sumber.svg">SVG</a></li><li><a href="plots/05_dataset/contoh_gambar_train.png">Contoh dua gambar per kelas dari train.</a> · <a href="plots/05_dataset/contoh_gambar_train.svg">SVG</a></li><li><a href="plots/05_dataset/kandidat_mirip_lintas_split.png">Pasangan kandidat gambar mirip yang melintasi train–validation.</a> · <a href="plots/05_dataset/kandidat_mirip_lintas_split.svg">SVG</a></li><li><a href="plots/05_dataset/preview_augmentasi_asli.png">Preview augmentasi asli, disalin apa adanya agar transform yang tercatat tetap otentik.</a> · PNG sumber asli</li></ul></details><details><summary>Efisiensi (1)</summary><ul><li><a href="plots/06_efisiensi/latency_cpu_host.png">Distribusi latency model dan pipeline pada CPU host.</a> · <a href="plots/06_efisiensi/latency_cpu_host.svg">SVG</a></li></ul></details>
+<h3>Tabel dan reproduksi</h3><ul>
+<li><a href="data/perbandingan_semua_run.csv">Tabel perbandingan seluruh run</a></li>
+<li><a href="data/agregat_finalis_tiga_seed.csv">Agregat finalis tiga seed</a></li>
+<li><a href="data/metrik_per_kelas_test.csv">Metrik test per kelas</a> · <a href="data/interval_test.csv">Interval test</a></li>
+<li><a href="data/rekomendasi_model.json">Rekomendasi model dan ruang lingkup bukti</a></li>
+<li><a href="data/audit_verifikasi.json">Audit verifikasi dan checksum sumber</a></li>
+<li><a href="generate_analysis.py">Skrip reproduksi</a> · <a href="BACA_SAYA.txt">Petunjuk singkat</a></li>
+</ul></section>
+<small>Sumber: MobileNetV3/outputs/bananalsd_notebook_device_auto_v2/ · Tidak menggunakan pencarian web atau hasil dari folder model lain.</small>
+</main></html>

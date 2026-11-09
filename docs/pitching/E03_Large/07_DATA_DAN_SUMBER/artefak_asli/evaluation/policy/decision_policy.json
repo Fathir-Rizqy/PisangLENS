@@ -1,0 +1,8 @@
+{
+  "status": "feasible",
+  "tau_healthy": 0.8,
+  "tau_disease": 0.5,
+  "fit_source": "validation",
+  "scope_detector": "not_implemented",
+  "quality_rules_enabled": false
+}

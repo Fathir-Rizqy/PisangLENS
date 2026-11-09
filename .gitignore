@@ -1,0 +1,20 @@
+# Rahasia dan konfigurasi lokal
+/config/config.php
+/.env
+/storage/
+
+# Runtime dan cache lokal
+/.venv/
+/venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+*.log
+
+# Artefak eksperimen besar; paket inference final tetap dilacak
+/research/outputs/
+/research/cache/
+/conversion/
+**/checkpoints/

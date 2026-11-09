@@ -1,0 +1,578 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "Checkpoint terpilih E03 Large seed42",
+      "status": "passed"
+    },
+    {
+      "check": "SHA256 checkpoint cocok dengan seleksi",
+      "status": "passed"
+    },
+    {
+      "check": "Semua prediksi test berasal dari checkpoint yang sama",
+      "status": "passed"
+    },
+    {
+      "check": "135 ID test sama dengan manifest",
+      "status": "passed"
+    },
+    {
+      "check": "Label test sama dengan manifest",
+      "status": "passed"
+    },
+    {
+      "check": "Akurasi test hitung ulang cocok",
+      "status": "passed"
+    },
+    {
+      "check": "Macro-F1 test hitung ulang cocok",
+      "status": "passed"
+    },
+    {
+      "check": "Confusion matrix test hitung ulang cocok",
+      "status": "passed"
+    },
+    {
+      "check": "Tidak ada exact content hash overlap train / validation",
+      "status": "passed"
+    },
+    {
+      "check": "Tidak ada exact content hash overlap train / test",
+      "status": "passed"
+    },
+    {
+      "check": "Tidak ada exact content hash overlap validation / test",
+      "status": "passed"
+    },
+    {
+      "check": "Argmax logits sesuai label prediksi",
+      "status": "passed"
+    },
+    {
+      "check": "Confidence adalah probabilitas terkalibrasi maksimum",
+      "status": "passed"
+    },
+    {
+      "check": "Keputusan policy cocok dengan threshold tersimpan",
+      "status": "passed"
+    },
+    {
+      "check": "Tepat dua salah klasifikasi argmax",
+      "status": "passed"
+    },
+    {
+      "check": "Satu salah diterima dan satu uncertain",
+      "status": "passed"
+    },
+    {
+      "check": "Checkpoint epoch ada dalam history",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/cordana/raw_e9abdeb7f9b0_00129.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/cordana/raw_e9abdeb7f9b0_00131.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/cordana/raw_e9abdeb7f9b0_00133.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/healthy/raw_e9abdeb7f9b0_00001.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/healthy/raw_e9abdeb7f9b0_00003.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/healthy/raw_e9abdeb7f9b0_00004.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/pestalotiopsis/raw_e9abdeb7f9b0_00291.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/pestalotiopsis/raw_e9abdeb7f9b0_00293.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/pestalotiopsis/raw_e9abdeb7f9b0_00294.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/sigatoka/raw_e9abdeb7f9b0_00465.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/sigatoka/raw_e9abdeb7f9b0_00466.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 03_GAMBAR_RAW/sigatoka/raw_e9abdeb7f9b0_00468.png",
+      "status": "passed"
+    },
+    {
+      "check": "Semua contoh augmentasi berasal dari train",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/cordana/raw_e9abdeb7f9b0_00187.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/cordana/raw_e9abdeb7f9b0_00201.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/healthy/raw_e9abdeb7f9b0_00008.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/healthy/raw_e9abdeb7f9b0_00031.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/pestalotiopsis/raw_e9abdeb7f9b0_00428.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/pestalotiopsis/raw_e9abdeb7f9b0_00453.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/sigatoka/raw_e9abdeb7f9b0_00464.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 06_GAMBAR_PREDIKSI_BENAR/sigatoka/raw_e9abdeb7f9b0_00728.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 05_MISKLASIFIKASI/gambar/pestalotiopsis/raw_e9abdeb7f9b0_00341.png",
+      "status": "passed"
+    },
+    {
+      "check": "Salinan identik: 05_MISKLASIFIKASI/gambar/sigatoka/raw_e9abdeb7f9b0_00748.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 01_EDA_contoh_raw.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 02_EDA_cleaning_distribusi_split.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 03_EDA_raw_vs_augmentasi.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 04_TRAINING_alasan_pemilihan.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 05_TRAINING_learning_curves.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 06_EVALUASI_confusion_matrix_test.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 07_EVALUASI_contoh_prediksi_benar.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 08_EVALUASI_dua_misklasifikasi.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 09_EVALUASI_policy_confidence.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 10_ROBUSTNESS_stress_test.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 11_EFISIENSI_benchmark_host.png",
+      "status": "passed"
+    },
+    {
+      "check": "Ukuran PNG utama 2880x1620: 12_REVIEW_batas_bukti_dan_langkah_lanjut.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/cordana/raw_e9abdeb7f9b0_00129.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/cordana/raw_e9abdeb7f9b0_00131.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/cordana/raw_e9abdeb7f9b0_00133.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/healthy/raw_e9abdeb7f9b0_00001.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/healthy/raw_e9abdeb7f9b0_00003.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/healthy/raw_e9abdeb7f9b0_00004.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/pestalotiopsis/raw_e9abdeb7f9b0_00291.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/pestalotiopsis/raw_e9abdeb7f9b0_00293.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/pestalotiopsis/raw_e9abdeb7f9b0_00294.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/sigatoka/raw_e9abdeb7f9b0_00465.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/sigatoka/raw_e9abdeb7f9b0_00466.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 03_GAMBAR_RAW/sigatoka/raw_e9abdeb7f9b0_00468.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/cordana/raw_e9abdeb7f9b0_00129__aug1_seed42.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/cordana/raw_e9abdeb7f9b0_00129__aug2_seed43.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/cordana/raw_e9abdeb7f9b0_00129__aug3_seed44.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/healthy/raw_e9abdeb7f9b0_00001__aug1_seed1042.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/healthy/raw_e9abdeb7f9b0_00001__aug2_seed1043.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/healthy/raw_e9abdeb7f9b0_00001__aug3_seed1044.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/pestalotiopsis/raw_e9abdeb7f9b0_00291__aug1_seed2042.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/pestalotiopsis/raw_e9abdeb7f9b0_00291__aug2_seed2043.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/pestalotiopsis/raw_e9abdeb7f9b0_00291__aug3_seed2044.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/sigatoka/raw_e9abdeb7f9b0_00465__aug1_seed3042.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/sigatoka/raw_e9abdeb7f9b0_00465__aug2_seed3043.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 04_GAMBAR_AUGMENTASI/sigatoka/raw_e9abdeb7f9b0_00465__aug3_seed3044.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/cordana/raw_e9abdeb7f9b0_00187.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/cordana/raw_e9abdeb7f9b0_00201.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/healthy/raw_e9abdeb7f9b0_00008.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/healthy/raw_e9abdeb7f9b0_00031.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/pestalotiopsis/raw_e9abdeb7f9b0_00428.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/pestalotiopsis/raw_e9abdeb7f9b0_00453.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/sigatoka/raw_e9abdeb7f9b0_00464.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 06_GAMBAR_PREDIKSI_BENAR/sigatoka/raw_e9abdeb7f9b0_00728.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 05_MISKLASIFIKASI/gambar/pestalotiopsis/raw_e9abdeb7f9b0_00341.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 05_MISKLASIFIKASI/gambar/sigatoka/raw_e9abdeb7f9b0_00748.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 08_CONTOH_GANGGUAN/cordana/raw_e9abdeb7f9b0_00166__0.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 08_CONTOH_GANGGUAN/cordana/raw_e9abdeb7f9b0_00166__1.png",
+      "status": "passed"
+    },
+    {
+      "check": "Gambar individual 224x224: 08_CONTOH_GANGGUAN/cordana/raw_e9abdeb7f9b0_00166__2.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/01_EDA_contoh_raw.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/01_EDA_contoh_raw.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/02_EDA_cleaning_distribusi_split.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/02_EDA_cleaning_distribusi_split.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/03_EDA_raw_vs_augmentasi.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/03_EDA_raw_vs_augmentasi.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/04_TRAINING_alasan_pemilihan.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/04_TRAINING_alasan_pemilihan.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/05_TRAINING_learning_curves.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/05_TRAINING_learning_curves.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/06_EVALUASI_confusion_matrix_test.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/06_EVALUASI_confusion_matrix_test.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/07_EVALUASI_contoh_prediksi_benar.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/07_EVALUASI_contoh_prediksi_benar.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/08_EVALUASI_dua_misklasifikasi.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/08_EVALUASI_dua_misklasifikasi.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/09_EVALUASI_policy_confidence.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/09_EVALUASI_policy_confidence.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/10_ROBUSTNESS_stress_test.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/10_ROBUSTNESS_stress_test.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/11_EFISIENSI_benchmark_host.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/11_EFISIENSI_benchmark_host.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 01_PLOT_UTAMA/12_REVIEW_batas_bukti_dan_langkah_lanjut.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 01_PLOT_UTAMA/12_REVIEW_batas_bukti_dan_langkah_lanjut.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/01_EDA/distribusi_sumber_937_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/01_EDA/kualitas_gambar_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/01_EDA/histogram_rgb_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/01_EDA/contoh_per_kelas_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/01_EDA/preview_augmentasi_dari_run_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/02_TRAINING/learning_curves_E03_seed42_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/02_TRAINING/learning_rate_E03_seed42_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/02_TRAINING/confusion_matrix_VALIDATION_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/confusion_matrix_TEST_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/confusion_matrix_TEST_normalized_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/roc_TEST_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/reliability_asli.png",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/performa_per_kelas_dan_interval.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/performa_per_kelas_dan_interval.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/roc_dan_precision_recall_TEST.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 02_PLOT_PENDUKUNG/03_EVALUASI/roc_dan_precision_recall_TEST.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/05_REVIEW/kandidat_mirip_train_validation.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 02_PLOT_PENDUKUNG/05_REVIEW/kandidat_mirip_train_validation.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/02_TRAINING/kurva_training_rinci_E03_seed42.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 02_PLOT_PENDUKUNG/02_TRAINING/kurva_training_rinci_E03_seed42.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/01_EDA/raw_vs_augmentasi_empat_kelas.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 02_PLOT_PENDUKUNG/01_EDA/raw_vs_augmentasi_empat_kelas.svg",
+      "status": "passed"
+    },
+    {
+      "check": "File plot tersedia: 02_PLOT_PENDUKUNG/04_ROBUSTNESS/contoh_gambar_gangguan.png",
+      "status": "passed"
+    },
+    {
+      "check": "SVG tersedia: 02_PLOT_PENDUKUNG/04_ROBUSTNESS/contoh_gambar_gangguan.svg",
+      "status": "passed"
+    }
+  ],
+  "selected_run": "E03_large_seed42",
+  "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+  "training_or_inference_rerun": false,
+  "main_figures": 12,
+  "supporting_figures": 18,
+  "image_files": 37,
+  "misclassified_test_images": 2,
+  "augmentation_provenance": "Regenerated preview using extracted augment_pil and E03 resolved config; train only",
+  "runtime": {
+    "torch": "2.9.1+cpu",
+    "torchvision": "0.24.1+cpu"
+  },
+  "source_runtime": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130"
+  },
+  "limitations": [
+    "Internal test only",
+    "Capture independence unverified",
+    "One unreviewed near-duplicate candidate across train-validation",
+    "Validation reused for selection, calibration, and policy",
+    "Synthetic stress is not field validation",
+    "Preview pixel values can differ across torchvision versions"
+  ]
+}

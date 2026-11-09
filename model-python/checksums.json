@@ -1,0 +1,21 @@
+{
+  "README.txt": "2480e5ef7373011c901af27895fa14410f03aaf2bc7f3f2421dcc1882401bb01",
+  "__init__.py": "d666ac5d12e3184a0c33650250bb79ce23b80573a3c47594fe6f8f3a822120e1",
+  "calibration.json": "bf997d920672e7a643f9c2c43123980c534ec04e9e03473407d6b4bac975608f",
+  "decision_policy.json": "30bbad06fddcd04f1826ff12e0421ead4e56d8251537d72da776a039b6f8c9c4",
+  "examples/contoh_cordana.png": "6464db9476ff5afe59dffe09f202f9144a36d4acff68d572b81b7b8f4c10e06d",
+  "examples/contoh_healthy.png": "6ec7322d3d423ffa49bb54df33ac4d269e63895e87d82ae74f720e5ed5071266",
+  "examples/contoh_uncertain.png": "7f4140aaa78d3970bc60c5380a0cd931747a2abc07954b46598327c6efcffcf2",
+  "examples/reference_predictions.json": "e6b089787b24c7935a12fb7d1c3cf6002f9591ecec879fe9609a6e6c06186c85",
+  "inference.py": "5a8c0735cfee5e8bc2ed56db15060f2b903243eaf45a74ed53f38c97659302ff",
+  "inference_contract.json": "97c7d874940ab1dda54e0fb7064e1881fbffa43aaabcd341bfbdc9d0ce96c08f",
+  "label_mapping.json": "a8c20b8f2fe39a0f9d7ae3009f553897c200dc4f1302bcaac20610496fa3a173",
+  "metadata.json": "56eb7020e7991010feace1c6d359382ea8fd8bcce56dad7dd002f4fb74ad3044",
+  "model_config.json": "87f8a765cd556ea70e94fc5eeab95c6a8b142e89bc779d060bc5a5de9b2cef14",
+  "model_state_dict.pt": "4805961f21bbea5a7b92e728611791d035fd4d0bc20a9d5ea3d852f642c4f8ab",
+  "preprocessing.json": "8d38c6bbcae655bc76f31697caf15926920ba2a210883e7855a1a5b240389503",
+  "preprocessing.py": "f84755080a35d6980cdc07f9127436ba53fceb2ca9348fb1246d78cff5ee27b9",
+  "requirements.txt": "4b69cd471f15b95835346aa0d13cd6f3e6b441f5105f86e0d1d7cdd7b3b88bb2",
+  "verification_report.json": "9b1620dfce78148048e63c8fdfaf1656fdc727705e1689678a99791fabf32916",
+  "verify_package.py": "f5758a746277e61597538cdd3f7f1264e3428a29bdf9945f7a7c581cc366abd1"
+}

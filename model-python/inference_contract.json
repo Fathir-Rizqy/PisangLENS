@@ -1,0 +1,51 @@
+{
+  "orientation": "EXIF transpose",
+  "color": "RGB",
+  "resize": "direct_bilinear",
+  "interpolation": "bilinear_antialias",
+  "tensor_shape": [
+    "B",
+    3,
+    224,
+    224
+  ],
+  "layout": "NCHW",
+  "dtype": "float32",
+  "pixel_before_normalization": [
+    0,
+    1
+  ],
+  "normalized_range": [
+    [
+      -2.1179039301310043,
+      -2.0357142857142856,
+      -1.8044444444444445
+    ],
+    [
+      2.2489082969432315,
+      2.428571428571429,
+      2.6399999999999997
+    ]
+  ],
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "normalization": "outside_model_once",
+  "output": "four logits [B,4]",
+  "probability": "softmax(logits / T)",
+  "label_order": [
+    "cordana",
+    "healthy",
+    "pestalotiopsis",
+    "sigatoka"
+  ],
+  "pretrained_transform_deviation": "direct resize; no center crop",
+  "augmentation_at_inference": false
+}

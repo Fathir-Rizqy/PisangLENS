@@ -1,0 +1,47 @@
+[
+  {
+    "image": "examples/contoh_cordana.png",
+    "source_image_id": "raw_e9abdeb7f9b0_00132",
+    "true_label": "cordana",
+    "predicted_label_id": 0,
+    "policy_status": "supported_prediction",
+    "confidence": 0.9999617212839141,
+    "logits": [
+      13.8751220703125,
+      -8.664664268493652,
+      -6.381751537322998,
+      -0.14599165320396423
+    ],
+    "source": "original internal test predictions; not independent holdout"
+  },
+  {
+    "image": "examples/contoh_healthy.png",
+    "source_image_id": "raw_e9abdeb7f9b0_00000",
+    "true_label": "healthy",
+    "predicted_label_id": 1,
+    "policy_status": "supported_prediction",
+    "confidence": 0.9916297677177646,
+    "logits": [
+      -6.433588981628418,
+      7.418499946594238,
+      -3.9439711570739746,
+      0.7940205335617065
+    ],
+    "source": "original internal test predictions; not independent holdout"
+  },
+  {
+    "image": "examples/contoh_uncertain.png",
+    "source_image_id": "raw_e9abdeb7f9b0_00341",
+    "true_label": "pestalotiopsis",
+    "predicted_label_id": 1,
+    "policy_status": "uncertain",
+    "confidence": 0.7129367729651712,
+    "logits": [
+      -2.471940040588379,
+      2.3612442016601562,
+      -1.1146248579025269,
+      0.6694272756576538
+    ],
+    "source": "original internal test predictions; not independent holdout"
+  }
+]

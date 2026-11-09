@@ -1,0 +1,44 @@
+{
+  "model_name": "E03_large_seed42",
+  "architecture": "MobileNetV3-Large",
+  "recipe": "E03",
+  "seed": 42,
+  "parameters": 4207156,
+  "framework": "PyTorch",
+  "weights_format": "state_dict; optimizer excluded",
+  "weights_file": "model_state_dict.pt",
+  "source_checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+  "weights_sha256": "4805961f21bbea5a7b92e728611791d035fd4d0bc20a9d5ea3d852f642c4f8ab",
+  "preprocessing_fingerprint_original": "4270137b4a14958d41d4949a9be04946daace4b7097fa3baf2a2823ecb307b00",
+  "original_runtime": {
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130"
+  },
+  "verified_runtime": {
+    "python": "3.12.3",
+    "torch": "2.9.1+cpu",
+    "torchvision": "0.24.1+cpu",
+    "Pillow": "13.0.0",
+    "numpy": "2.5.4"
+  },
+  "metrics": {
+    "test_n": 135,
+    "test_accuracy": 0.9851851851851852,
+    "test_macro_f1": 0.9793523064799661,
+    "validation_three_seed_macro_f1_mean": 0.9826652019022815
+  },
+  "scope": "internal_only; no external/OOD validation",
+  "calibration_source": "validation",
+  "policy_source": "validation",
+  "source_files_sha256": {
+    "training/selection.json": "d667c48945562c24461c68224d0d55725e232ef78ede5dbdfb488ee3b10df6b3",
+    "training/handoff/model_state_dict.pt": "4805961f21bbea5a7b92e728611791d035fd4d0bc20a9d5ea3d852f642c4f8ab",
+    "training/handoff/model_config.json": "87f8a765cd556ea70e94fc5eeab95c6a8b142e89bc779d060bc5a5de9b2cef14",
+    "training/handoff/preprocessing.resolved.json": "5d041a1871f668b4d426b80da36a1fc9c64b4963617c92b894cc9b224e97b55a",
+    "training/handoff/inference_contract.json": "97c7d874940ab1dda54e0fb7064e1881fbffa43aaabcd341bfbdc9d0ce96c08f",
+    "training/handoff/label_mapping.json": "a8c20b8f2fe39a0f9d7ae3009f553897c200dc4f1302bcaac20610496fa3a173",
+    "evaluation/calibration/temperature.json": "bf997d920672e7a643f9c2c43123980c534ec04e9e03473407d6b4bac975608f",
+    "evaluation/policy/decision_policy.json": "30bbad06fddcd04f1826ff12e0421ead4e56d8251537d72da776a039b6f8c9c4",
+    "evaluation/internal/metrics.json": "64ae4feb6d1b1645a08c888f3ec40ddce07cfb1023cfc43a9268cfc87cf5892a"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "fitted",
+  "temperature": 1.3768672768090888,
+  "converged": true,
+  "iterations": 13,
+  "at_bound": false,
+  "nll_before": 0.07139346577064314,
+  "nll_after": 0.06597460773365545,
+  "fit_source": "validation",
+  "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+  "preprocessing_fingerprint": "4270137b4a14958d41d4949a9be04946daace4b7097fa3baf2a2823ecb307b00",
+  "reuse_warning": "validation reused for model selection, calibration and policy; development optimism"
+}

@@ -1,0 +1,15 @@
+{
+  "comparison": "Large seed42 minus Small E02 seed42",
+  "source_split": "validation",
+  "delta_macro_f1": 0.003255253026189564,
+  "ci_95": [
+    -0.030303030303030276,
+    0.039499670836076306
+  ],
+  "replicates": 2000,
+  "seed": 42,
+  "method": "paired_stratified_image_bootstrap",
+  "limitation": "Eksploratif sesudah seleksi pada validation yang sama; bukan CI selisih mean tiga seed atau bukti independen.",
+  "prediction_disagreements": 2,
+  "sampling_unit": "image_assuming_independence_unverified"
+}

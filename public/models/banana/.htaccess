@@ -1,0 +1,6 @@
+# These are application-level lossless containers, decoded by model-weights.js.
+# Do not mark the stored gzip bytes as HTTP Content-Encoding: gzip.
+<IfModule mod_mime.c>
+    RemoveEncoding .gz
+    AddType application/octet-stream .gz
+</IfModule>

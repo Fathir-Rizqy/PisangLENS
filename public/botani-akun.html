@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Akun Botani | PisangLENS</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script type="module" src="js/botani.js"></script>
+</head>
+<body>
+    <main data-role="botani">
+        <div id="staff-panel" class="dashboard-layout" hidden>
+            <aside class="dashboard-sidebar">
+            <a class="brand" href="#dashboard">PisangLENS <small>RUANG BOTANI</small></a>
+            <nav class="dashboard-nav" aria-label="Navigasi botani">
+                <a href="#dashboard">Beranda</a>
+                <a href="#antrean">Antrean Tiket</a>
+                <a href="#ditangani">Konsultasi Saya</a>
+                <a href="#obrolan">Obrolan</a>
+                <a href="#akun">Akun</a>
+            </nav>
+            <p>Peninjauan pakar untuk kesehatan daun pisang.</p>
+            <button class="secondary" id="staff-logout" type="button">Keluar</button>
+            </aside>
+            <div class="dashboard-main">
+            <header class="dashboard-header"><div><p class="eyebrow">PAKAR / KONSULTASI DAUN</p><h1 id="dashboard-title">Beranda Botani</h1></div><span id="botanist-badge" class="badge">Status akun</span></header>
+            <p id="staff-status" class="dashboard-notice" role="status"></p>
+            <section id="dashboard" data-dashboard-section data-title="Beranda Botani">
+                <div class="hero"><h2 id="botanist-name">Ruang Botani</h2><p>Tinjau kasus berkeyakinan rendah dan bantu petani melalui konsultasi.</p><a class="action-link" href="#antrean">Lihat antrean tiket</a></div>
+                <div class="dashboard-grid"><article class="panel"><h2>Ambil kasus baru</h2><p>Tiket yang tersedia menampilkan ringkasan. Ambil tiket untuk membuka obrolan.</p><a href="#antrean">Buka antrean</a></article><article class="panel"><h2>Lanjutkan konsultasi</h2><p>Baca dan balas pesan pada kasus yang Anda tangani.</p><a href="#ditangani">Konsultasi saya</a></article></div>
+            </section>
+            <section id="antrean" data-dashboard-section data-title="Antrean Tiket" class="panel" hidden>
+                <h2>Antrean tiket</h2>
+                <p>Ambil tiket untuk membuka percakapan dan detail kasus.</p>
+                <button id="load-tickets" class="secondary" type="button">Muat ulang tiket</button>
+                <p id="ticket-status" role="status"></p>
+                <ul id="ticket-list" class="history-list"></ul>
+            </section>
+            <section id="ditangani" data-dashboard-section data-title="Konsultasi Saya" class="panel" hidden>
+                <h2>Konsultasi yang Anda tangani</h2><p id="assigned-status" role="status"></p><ul id="assigned-list" class="history-list"></ul>
+            </section>
+            <section id="obrolan" data-dashboard-section data-title="Obrolan Konsultasi" class="panel" hidden>
+                <h2>Obrolan</h2>
+                <div id="ticket-detail"></div>
+                <div id="ticket-photo"></div>
+                <p id="chat-status" role="status">Pilih tiket yang Anda tangani.</p>
+                <ul id="chat-messages" class="history-list"></ul>
+                <form id="reply-form" hidden>
+                    <label>Balasan <textarea name="message" rows="4" required></textarea></label>
+                    <button type="submit">Kirim balasan</button>
+                </form>
+                <div id="training-review" class="panel"></div>
+            </section>
+            <section id="akun" data-dashboard-section data-title="Akun dan Verifikasi" hidden>
+                <div class="panel profile-card">
+                    <div class="profile-heading">
+                        <div><p class="eyebrow">PROFIL PROFESIONAL</p><h2>Informasi akun botani</h2></div>
+                        <button class="secondary" id="profile-refresh" type="button">Perbarui status akun</button>
+                    </div>
+                    <p>Lengkapi informasi profesional Anda agar pengelola dapat meninjau akun dengan jelas.</p>
+                    <dl id="account-detail" class="profile-details">
+                        <div><dt>Nama lengkap</dt><dd id="profile-name">Memuat…</dd></div>
+                        <div><dt>Email</dt><dd id="profile-email">Memuat…</dd></div>
+                        <div><dt>Asal institusi</dt><dd id="profile-institution">Belum diisi</dd></div>
+                        <div><dt>Provinsi</dt><dd id="profile-province">Belum diisi</dd></div>
+                        <div><dt>Kabupaten/Kota</dt><dd id="profile-city">Belum diisi</dd></div>
+                        <div><dt>Status verifikasi akun</dt><dd id="profile-verification">Memuat…</dd></div>
+                        <div><dt>Tanggal bergabung</dt><dd id="profile-joined">Belum tersedia</dd></div>
+                    </dl>
+                    <p class="profile-help">Gunakan Perbarui status akun untuk melihat keputusan verifikasi terbaru dari pengelola.</p>
+                </div>
+                <div class="panel">
+                    <h2>Lengkapi profil profesional</h2>
+                    <p id="profile-mode">Perubahan disimpan untuk akun Anda yang sedang masuk.</p>
+                    <form id="profile-form" novalidate>
+                        <label>Nama lengkap <input name="name" autocomplete="name" required maxlength="150"></label>
+                        <label>Asal institusi <input name="institution" autocomplete="organization" required maxlength="150"></label>
+                        <div class="profile-form-grid">
+                            <label>Provinsi <input name="province" autocomplete="address-level1" required maxlength="100" aria-describedby="profile-region-help"></label>
+                            <label>Kabupaten/Kota <input name="city" autocomplete="address-level2" required maxlength="100" aria-describedby="profile-region-help"></label>
+                        </div>
+                        <p class="profile-help" id="profile-region-help">Saran wilayah berisi contoh terbatas untuk demo. Anda dapat mengetik wilayah sendiri; data ini tidak mencakup seluruh wilayah Indonesia.</p>
+                        <button type="submit">Simpan profil</button>
+                        <p id="profile-status" class="dashboard-notice" role="status"></p>
+                    </form>
+                </div>
+            </section>
+            </div>
+        </div>
+    </main>
+    <noscript><p>Aktifkan JavaScript untuk membuka dashboard. <a href="index.html?role=botani">Masuk Botani</a></p></noscript>
+</body>
+</html>

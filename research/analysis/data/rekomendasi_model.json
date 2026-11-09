@@ -1,0 +1,42 @@
+{
+  "recommended_recipe": "E03",
+  "recommended_variant": "MobileNetV3-Large",
+  "recommended_run": "E03_large_seed42",
+  "selection_basis": "mean validation macro-F1 of three seeds; fixed seed42 handoff per original protocol",
+  "validation_three_seed_macro_f1_mean": 0.9826652019022815,
+  "validation_three_seed_macro_f1_sample_std": 0.0,
+  "small_validation_three_seed_macro_f1_mean": 0.9760114298940309,
+  "delta_macro_f1_percentage_points": 0.6653772008250569,
+  "test_accuracy": 0.9851851851851852,
+  "test_macro_f1": 0.9793523064799661,
+  "test_n": 135,
+  "test_correct": 133,
+  "test_scope": "only E03_large_seed42; no comparative test evidence for other checkpoints",
+  "best_single_run_by_validation_f1_then_ce": "E03_large_seed17",
+  "checkpoint": "/home/ouka/Documents/Hackathon/MobileNetV3/outputs/bananalsd_notebook_device_auto_v2/training/E03_large_seed42/checkpoints/best.pt",
+  "inference_weights": "/home/ouka/Documents/Hackathon/MobileNetV3/outputs/bananalsd_notebook_device_auto_v2/training/handoff/model_state_dict.pt",
+  "parameters_large": 4207156,
+  "parameters_small": 1521956,
+  "validation_paired_bootstrap": {
+    "comparison": "Large seed42 minus Small E02 seed42",
+    "source_split": "validation",
+    "delta_macro_f1": 0.003255253026189564,
+    "ci_95": [
+      -0.030303030303030276,
+      0.039499670836076306
+    ],
+    "replicates": 2000,
+    "seed": 42,
+    "method": "paired_stratified_image_bootstrap",
+    "limitation": "Eksploratif sesudah seleksi pada validation yang sama; bukan CI selisih mean tiga seed atau bukti independen.",
+    "prediction_disagreements": 2,
+    "sampling_unit": "image_assuming_independence_unverified"
+  },
+  "evidence_limitations": [
+    "135 test images; 13 healthy images",
+    "Same internal split for all seeds",
+    "One unreviewed near-duplicate candidate crossing train-validation",
+    "Field and OOD data pending",
+    "Validation reused for model selection, calibration, and policy"
+  ]
+}

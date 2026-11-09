@@ -1,0 +1,8 @@
+{
+  "variant": "large",
+  "num_classes": 4,
+  "dropout": 0.2,
+  "weight_enum": "MobileNet_V3_Large_Weights.IMAGENET1K_V2",
+  "framework": "pytorch",
+  "precision": "fp32"
+}

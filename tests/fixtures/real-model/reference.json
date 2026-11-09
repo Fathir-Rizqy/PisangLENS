@@ -1,0 +1,664 @@
+{
+  "metadata": {
+    "model_version": "e03-large-seed42-fd0e0c2b-v1",
+    "selected_run": "E03_large_seed42",
+    "original_format": "PyTorch torchvision MobileNetV3-Large state_dict",
+    "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+    "state_dict_sha256": "4805961f21bbea5a7b92e728611791d035fd4d0bc20a9d5ea3d852f642c4f8ab",
+    "loader": "tf.loadLayersModel",
+    "runtime": "4.22.0",
+    "dtype": "float32",
+    "input_shape": [
+      null,
+      224,
+      224,
+      3
+    ],
+    "layout": "NHWC",
+    "color": "RGB",
+    "resize": "direct_bilinear_antialias_pillow",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "output": "logits",
+    "output_shape": [
+      null,
+      4
+    ],
+    "temperature": 1.3768672768090888,
+    "labels": [
+      "Cordana Leaf Spot",
+      "Healthy",
+      "Pestalotiopsis Leaf Blight",
+      "Sigatoka"
+    ],
+    "source_labels": [
+      "cordana",
+      "healthy",
+      "pestalotiopsis",
+      "sigatoka"
+    ],
+    "confidence_threshold": 0.8,
+    "normalization": "outside_model_once",
+    "precision_conversion": "none",
+    "parameter_count": 4207156
+  },
+  "fixtures": [
+    {
+      "file": "raw_e9abdeb7f9b0_00132.png",
+      "image_id": "raw_e9abdeb7f9b0_00132",
+      "split": "test",
+      "true_index": 0,
+      "logits": [
+        13.87511920928955,
+        -8.664671897888184,
+        -6.381743907928467,
+        -0.1459886133670807
+      ],
+      "probabilities": [
+        0.9999617338180542,
+        7.770218957148245e-08,
+        4.078679580743483e-07,
+        3.779331382247619e-05
+      ],
+      "resized_rgb_sha256": "6814f61bb1207a688525aa009bc928927a28054b14a0276cf2343da4084160cb",
+      "resized_rgb_file": null,
+      "predicted_index": 0,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00137.png",
+      "image_id": "raw_e9abdeb7f9b0_00137",
+      "split": "test",
+      "true_index": 0,
+      "logits": [
+        12.6395263671875,
+        -10.632157325744629,
+        -3.47585129737854,
+        0.8932008743286133
+      ],
+      "probabilities": [
+        0.9997946619987488,
+        4.5656758373979756e-08,
+        8.255876309704036e-06,
+        0.00019717833492904902
+      ],
+      "resized_rgb_sha256": "f6c3152203eff27dfa55631124e9c3c496d50f050ecebfddaed15c5d673309de",
+      "resized_rgb_file": null,
+      "predicted_index": 0,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00142.png",
+      "image_id": "raw_e9abdeb7f9b0_00142",
+      "split": "test",
+      "true_index": 0,
+      "logits": [
+        8.757280349731445,
+        -6.143002986907959,
+        -0.32120126485824585,
+        -4.667220592498779
+      ],
+      "probabilities": [
+        0.9985547661781311,
+        1.9929293557652272e-05,
+        0.0013671539491042495,
+        5.8208526752423495e-05
+      ],
+      "resized_rgb_sha256": "b69b5e89888862cbe0506e0da5427b1e3ab858fdf9001dc64938a56186976220",
+      "resized_rgb_file": null,
+      "predicted_index": 0,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00143.png",
+      "image_id": "raw_e9abdeb7f9b0_00143",
+      "split": "test",
+      "true_index": 0,
+      "logits": [
+        8.680938720703125,
+        -4.515269756317139,
+        -2.436171054840088,
+        -2.506027936935425
+      ],
+      "probabilities": [
+        0.9993240833282471,
+        6.875900726299733e-05,
+        0.0003112601116299629,
+        0.0002958618279080838
+      ],
+      "resized_rgb_sha256": "9367f214c352e44224a292716313fc83ff154fd4cd33f60b01b9a4c5d0aac685",
+      "resized_rgb_file": null,
+      "predicted_index": 0,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00149.png",
+      "image_id": "raw_e9abdeb7f9b0_00149",
+      "split": "test",
+      "true_index": 0,
+      "logits": [
+        12.550727844238281,
+        -8.320507049560547,
+        -3.30074143409729,
+        -1.2547566890716553
+      ],
+      "probabilities": [
+        0.9999455213546753,
+        2.6105118422492524e-07,
+        1.0001642294810154e-05,
+        4.419977994984947e-05
+      ],
+      "resized_rgb_sha256": "659029d2deae7487506a9e725d6d31c50e62a94b8b04bab1862fe0a24783efbb",
+      "resized_rgb_file": null,
+      "predicted_index": 0,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00000.png",
+      "image_id": "raw_e9abdeb7f9b0_00000",
+      "split": "test",
+      "true_index": 1,
+      "logits": [
+        -6.43358039855957,
+        7.418499946594238,
+        -3.9439749717712402,
+        0.7940160036087036
+      ],
+      "probabilities": [
+        4.237370012560859e-05,
+        0.9916298985481262,
+        0.00025844795163720846,
+        0.008069385774433613
+      ],
+      "resized_rgb_sha256": "7ca541135c7505fde09edae727aa6562dc2d8c1cdf740dc7d5f04c9b8a84fd8f",
+      "resized_rgb_file": null,
+      "predicted_index": 1,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00005.png",
+      "image_id": "raw_e9abdeb7f9b0_00005",
+      "split": "test",
+      "true_index": 1,
+      "logits": [
+        -9.574928283691406,
+        12.476577758789062,
+        -0.7616767287254333,
+        -4.67007303237915
+      ],
+      "probabilities": [
+        1.1077333539333267e-07,
+        0.9999291896820068,
+        6.673133611911908e-05,
+        3.904228378814878e-06
+      ],
+      "resized_rgb_sha256": "1acae0d3274acc1c7b1d8c2e171f7384a61a7f6fb7a3a53dea1c6bc37c76b620",
+      "resized_rgb_file": null,
+      "predicted_index": 1,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00008.png",
+      "image_id": "raw_e9abdeb7f9b0_00008",
+      "split": "test",
+      "true_index": 1,
+      "logits": [
+        -4.056705474853516,
+        6.419301986694336,
+        -5.672384738922119,
+        1.5391614437103271
+      ],
+      "probabilities": [
+        0.00048194025293923914,
+        0.9713112115859985,
+        0.00014906373689882457,
+        0.02805780991911888
+      ],
+      "resized_rgb_sha256": "dda3833f7dc74c1d513b012e490dfff82be9a7a8a236fd3c824dce0656a1bb4e",
+      "resized_rgb_file": null,
+      "predicted_index": 1,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00031.png",
+      "image_id": "raw_e9abdeb7f9b0_00031",
+      "split": "test",
+      "true_index": 1,
+      "logits": [
+        -7.241543292999268,
+        8.144453048706055,
+        -3.183156967163086,
+        0.3535417318344116
+      ],
+      "probabilities": [
+        1.3972744454804342e-05,
+        0.9962448477745056,
+        0.00026630956563167274,
+        0.00347488047555089
+      ],
+      "resized_rgb_sha256": "eea952a02b683ff67c41074f8b7932d59f77e86e8f78107dff58ac64bae98944",
+      "resized_rgb_file": null,
+      "predicted_index": 1,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00032.png",
+      "image_id": "raw_e9abdeb7f9b0_00032",
+      "split": "test",
+      "true_index": 1,
+      "logits": [
+        -9.492486000061035,
+        14.433833122253418,
+        -4.217189788818359,
+        -3.6333491802215576
+      ],
+      "probabilities": [
+        2.8386146766479214e-08,
+        0.9999966621398926,
+        1.3093397228658432e-06,
+        2.0008219507872127e-06
+      ],
+      "resized_rgb_sha256": "e52c7b30bb572450642dff7832a4005857155cf508f4dda147f1413f4faa8821",
+      "resized_rgb_file": null,
+      "predicted_index": 1,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00298.png",
+      "image_id": "raw_e9abdeb7f9b0_00298",
+      "split": "test",
+      "true_index": 2,
+      "logits": [
+        -3.2921695709228516,
+        -4.728723049163818,
+        6.303207874298096,
+        -0.21315932273864746
+      ],
+      "probabilities": [
+        0.0009312190231867135,
+        0.00032804315560497344,
+        0.9900262355804443,
+        0.008714449591934681
+      ],
+      "resized_rgb_sha256": "aa538a76f41a7119ed3cd9698a6efb15c02d42d5dc9465fa66e9d16ebe41ad9e",
+      "resized_rgb_file": null,
+      "predicted_index": 2,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00312.png",
+      "image_id": "raw_e9abdeb7f9b0_00312",
+      "split": "test",
+      "true_index": 2,
+      "logits": [
+        1.1183843612670898,
+        -7.846996784210205,
+        9.282193183898926,
+        -4.312028884887695
+      ],
+      "probabilities": [
+        0.0026532341726124287,
+        3.9436222323274706e-06,
+        0.9972913861274719,
+        5.1392878958722576e-05
+      ],
+      "resized_rgb_sha256": "1a0828b0372169ab9032b75d1494acf2f38f30f46e545f22a1ceb8dd71135f93",
+      "resized_rgb_file": null,
+      "predicted_index": 2,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00332.png",
+      "image_id": "raw_e9abdeb7f9b0_00332",
+      "split": "test",
+      "true_index": 2,
+      "logits": [
+        -4.082760334014893,
+        -8.534331321716309,
+        15.06157398223877,
+        -4.11562442779541
+      ],
+      "probabilities": [
+        9.15063878892397e-07,
+        3.608501586427337e-08,
+        0.9999982118606567,
+        8.934812285588123e-07
+      ],
+      "resized_rgb_sha256": "8c41dcf4eab7df66275701dfe3c1844b7d5d14de0ad012f6be1c59d296f8897c",
+      "resized_rgb_file": null,
+      "predicted_index": 2,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00341.png",
+      "image_id": "raw_e9abdeb7f9b0_00341",
+      "split": "test",
+      "true_index": 2,
+      "logits": [
+        -2.471938133239746,
+        2.361239433288574,
+        -1.1146222352981567,
+        0.6694287061691284
+      ],
+      "probabilities": [
+        0.02130880393087864,
+        0.7129358053207397,
+        0.057106636464595795,
+        0.20864874124526978
+      ],
+      "resized_rgb_sha256": "2c3cd5f9e583066e69b65e9cbf92ff975502d214d970c516c27012da1acafabd",
+      "resized_rgb_file": null,
+      "predicted_index": 1,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00344.png",
+      "image_id": "raw_e9abdeb7f9b0_00344",
+      "split": "test",
+      "true_index": 2,
+      "logits": [
+        -1.425516963005066,
+        -6.020837783813477,
+        7.133266925811768,
+        -1.821372151374817
+      ],
+      "probabilities": [
+        0.0019898663740605116,
+        7.068992272252217e-05,
+        0.9964467883110046,
+        0.0014926651492714882
+      ],
+      "resized_rgb_sha256": "6369483b7970cedfb8ff5d0f268fae82125b5ac3cf97f208047882bd29b42309",
+      "resized_rgb_file": null,
+      "predicted_index": 2,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00464.png",
+      "image_id": "raw_e9abdeb7f9b0_00464",
+      "split": "test",
+      "true_index": 3,
+      "logits": [
+        0.6892175674438477,
+        -4.291042327880859,
+        0.8542391061782837,
+        3.434800148010254
+      ],
+      "probabilities": [
+        0.10526726394891739,
+        0.0028275407385081053,
+        0.11867105960845947,
+        0.7732341289520264
+      ],
+      "resized_rgb_sha256": "c8baefcbeed39cca7f908be2e4b8adfcd02624d38bac71daf501b38af40758fc",
+      "resized_rgb_file": null,
+      "predicted_index": 3,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00473.png",
+      "image_id": "raw_e9abdeb7f9b0_00473",
+      "split": "test",
+      "true_index": 3,
+      "logits": [
+        2.619719982147217,
+        -8.542421340942383,
+        -2.0543859004974365,
+        8.112014770507812
+      ],
+      "probabilities": [
+        0.01817072555422783,
+        5.4775391618022695e-06,
+        0.0006096149445511401,
+        0.981214165687561
+      ],
+      "resized_rgb_sha256": "781593a5f87afc9e7c914d4e7bb1200c1d3172d54b3994b5b40962886a113157",
+      "resized_rgb_file": null,
+      "predicted_index": 3,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00475.png",
+      "image_id": "raw_e9abdeb7f9b0_00475",
+      "split": "test",
+      "true_index": 3,
+      "logits": [
+        -5.373228549957275,
+        -7.7039666175842285,
+        -5.840437412261963,
+        18.910200119018555
+      ],
+      "probabilities": [
+        2.190119730016704e-08,
+        4.029966138574537e-09,
+        1.5599120217757445e-08,
+        1.0
+      ],
+      "resized_rgb_sha256": "9d8a4833de088eee0639617487533ae8d1ec856d8b2717933f5ae4b43aa5d0b4",
+      "resized_rgb_file": null,
+      "predicted_index": 3,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00496.png",
+      "image_id": "raw_e9abdeb7f9b0_00496",
+      "split": "test",
+      "true_index": 3,
+      "logits": [
+        -1.1596533060073853,
+        -5.58237886428833,
+        -4.115563869476318,
+        11.049551963806152
+      ],
+      "probabilities": [
+        0.00014088829630054533,
+        5.673472969647264e-06,
+        1.6463241991004907e-05,
+        0.9998369216918945
+      ],
+      "resized_rgb_sha256": "2e9aaa10d2eb0a778be961c8330286816252d99a90e1add77159aeeb9f65fa46",
+      "resized_rgb_file": null,
+      "predicted_index": 3,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00499.png",
+      "image_id": "raw_e9abdeb7f9b0_00499",
+      "split": "test",
+      "true_index": 3,
+      "logits": [
+        -5.714078903198242,
+        -7.201307773590088,
+        -2.1468095779418945,
+        15.444994926452637
+      ],
+      "probabilities": [
+        2.1181531906222517e-07,
+        7.192043227632894e-08,
+        2.8258771180844633e-06,
+        0.9999969005584717
+      ],
+      "resized_rgb_sha256": "515d4f97ff2807f85afbff6408e455bffb2565dec4f29c8fef0130d5394d1d30",
+      "resized_rgb_file": null,
+      "predicted_index": 3,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "raw_e9abdeb7f9b0_00748.png",
+      "image_id": "raw_e9abdeb7f9b0_00748",
+      "split": "test",
+      "true_index": 3,
+      "logits": [
+        -0.7721756100654602,
+        -5.011352062225342,
+        2.9152824878692627,
+        2.226806402206421
+      ],
+      "probabilities": [
+        0.04092683643102646,
+        0.0018831200432032347,
+        0.595818817615509,
+        0.3613712191581726
+      ],
+      "resized_rgb_sha256": "b07e41fe9e592e5041e9825efc0aaa4da69929f28031bda5c6bdcc88dddd4e52",
+      "resized_rgb_file": null,
+      "predicted_index": 2,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "resize-513x347.png",
+      "split": "preprocessing_probe",
+      "logits": [
+        -2.982793092727661,
+        1.301272988319397,
+        -2.6960535049438477,
+        3.3607277870178223
+      ],
+      "probabilities": [
+        0.008007058873772621,
+        0.179788738489151,
+        0.00986090861260891,
+        0.8023432493209839
+      ],
+      "resized_rgb_sha256": "b61d16888bd503864c37732ba68d68bddbfb68b7c61adef3ccce28a47d7cb2ce",
+      "resized_rgb_file": null,
+      "predicted_index": 3,
+      "width": 513,
+      "height": 347
+    },
+    {
+      "file": "resize-113x287.png",
+      "split": "preprocessing_probe",
+      "logits": [
+        -1.8954861164093018,
+        0.9810618758201599,
+        -3.00357723236084,
+        3.09155535697937
+      ],
+      "probabilities": [
+        0.021304383873939514,
+        0.17210601270198822,
+        0.009526916779577732,
+        0.7970626950263977
+      ],
+      "resized_rgb_sha256": "c6065e0cfc70c2f7e402a5aca1b344c45607d089796c2c76c9ca39aa34921b80",
+      "resized_rgb_file": null,
+      "predicted_index": 3,
+      "width": 113,
+      "height": 287
+    },
+    {
+      "file": "resize-49x31.png",
+      "split": "preprocessing_probe",
+      "logits": [
+        -1.7292436361312866,
+        1.9635294675827026,
+        -1.761461615562439,
+        1.6536413431167603
+      ],
+      "probabilities": [
+        0.03538518771529198,
+        0.5171351432800293,
+        0.03456680476665497,
+        0.41291293501853943
+      ],
+      "resized_rgb_sha256": "7135c241e8f7f4254d56368d7657f10f3ba1ffb05833e506eb32571d3eefb9b0",
+      "resized_rgb_file": null,
+      "predicted_index": 1,
+      "width": 49,
+      "height": 31
+    },
+    {
+      "file": "jpeg-test.jpg",
+      "split": "decode_probe",
+      "logits": [
+        13.956345558166504,
+        -8.773794174194336,
+        -6.197117328643799,
+        -0.18759587407112122
+      ],
+      "probabilities": [
+        0.9999648332595825,
+        6.766979510075544e-08,
+        4.396788710891997e-07,
+        3.456780905253254e-05
+      ],
+      "resized_rgb_sha256": "4f8310ce995bd17036a81317128a40e8fbd8ed9c5b0aadf8ba5a8be496df3980",
+      "resized_rgb_file": "jpeg-test.jpg.rgb",
+      "predicted_index": 0,
+      "width": 224,
+      "height": 224
+    },
+    {
+      "file": "jpeg-exif-rotate.jpg",
+      "split": "decode_probe",
+      "logits": [
+        9.090380668640137,
+        -5.015527248382568,
+        -4.830563545227051,
+        0.549380898475647
+      ],
+      "probabilities": [
+        0.9979053735733032,
+        3.5462806408759207e-05,
+        4.056156103615649e-05,
+        0.0020186847541481256
+      ],
+      "resized_rgb_sha256": "12c4c45fa864841c57c27c612f275cd8bd4de689606b03feab7399ee3fd1c2d7",
+      "resized_rgb_file": "jpeg-exif-rotate.jpg.rgb",
+      "predicted_index": 0,
+      "width": 517,
+      "height": 321
+    },
+    {
+      "file": "jpeg-grayscale.jpg",
+      "split": "decode_probe",
+      "logits": [
+        3.563070297241211,
+        -1.1842550039291382,
+        -1.003469705581665,
+        -2.456268310546875
+      ],
+      "probabilities": [
+        0.925312340259552,
+        0.02943585067987442,
+        0.033566057682037354,
+        0.011685720644891262
+      ],
+      "resized_rgb_sha256": "ddfd13cf956076e2ce076164e8719d2db071eb90def0636e3a638a9ae1995041",
+      "resized_rgb_file": "jpeg-grayscale.jpg.rgb",
+      "predicted_index": 0,
+      "width": 224,
+      "height": 224
+    }
+  ]
+}

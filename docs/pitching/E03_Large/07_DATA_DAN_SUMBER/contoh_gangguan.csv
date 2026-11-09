@@ -1,0 +1,4 @@
+﻿file,image_id,label_aktual,prediksi,confidence_calibrated,kondisi
+08_CONTOH_GANGGUAN/cordana/raw_e9abdeb7f9b0_00166__0.png,raw_e9abdeb7f9b0_00166,cordana,cordana,0.9952496336808109,Bersih
+08_CONTOH_GANGGUAN/cordana/raw_e9abdeb7f9b0_00166__1.png,raw_e9abdeb7f9b0_00166,cordana,cordana,0.9975539660608987,"Brightness 0,55"
+08_CONTOH_GANGGUAN/cordana/raw_e9abdeb7f9b0_00166__2.png,raw_e9abdeb7f9b0_00166,cordana,pestalotiopsis,0.6212001092045667,"Blur σ 1,5"

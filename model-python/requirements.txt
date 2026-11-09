@@ -1,0 +1,6 @@
+# Versi yang dipakai saat verifikasi inference lokal (Python 3.12).
+# Paket torch CPU atau CUDA dapat dipasang sesuai perangkat.
+torch==2.9.1
+torchvision==0.24.1
+Pillow==13.0.0
+numpy==2.5.4

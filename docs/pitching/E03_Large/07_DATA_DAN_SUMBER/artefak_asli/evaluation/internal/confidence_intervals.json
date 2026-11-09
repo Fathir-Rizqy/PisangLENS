@@ -1,0 +1,261 @@
+{
+  "unit": "image_assuming_independence",
+  "independence_warning": "Singleton group_id tidak membuktikan foto independen.",
+  "metrics": {
+    "accuracy": {
+      "value": 0.9851851851851852,
+      "ci": [
+        0.9475944129430699,
+        0.9959277965806651
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 133,
+      "denominator": 135
+    },
+    "macro_f1": {
+      "value": 0.9793523064799661,
+      "ci": [
+        0.9460566985414856,
+        1.0
+      ],
+      "confidence_level": 0.95,
+      "method": "stratified_image_bootstrap",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": null,
+      "denominator": 135
+    },
+    "balanced_accuracy": {
+      "value": 0.986863488624052,
+      "ci": [
+        0.9641115926327194,
+        1.0
+      ],
+      "confidence_level": 0.95,
+      "method": "stratified_image_bootstrap",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": null,
+      "denominator": 135
+    },
+    "recall_0": {
+      "value": 1.0,
+      "ci": [
+        0.8668077490609515,
+        0.9999999999999999
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 25,
+      "denominator": 25
+    },
+    "recall_1": {
+      "value": 1.0,
+      "ci": [
+        0.7719046276458016,
+        0.9999999999999999
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 13,
+      "denominator": 13
+    },
+    "recall_2": {
+      "value": 0.9615384615384616,
+      "ci": [
+        0.8110722109696524,
+        0.9931780150064564
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 25,
+      "denominator": 26
+    },
+    "recall_3": {
+      "value": 0.9859154929577465,
+      "ci": [
+        0.92443949479751,
+        0.9975093967294558
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 70,
+      "denominator": 71
+    },
+    "raw_disease_to_healthy": {
+      "value": 0.00819672131147541,
+      "ci": [
+        0.0014483909512207002,
+        0.044970800906824746
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 1,
+      "denominator": 122
+    },
+    "coverage": {
+      "value": 0.9925925925925926,
+      "ci": [
+        0.9592359169993797,
+        0.9986912117537255
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 134,
+      "denominator": 135
+    },
+    "selective_risk": {
+      "value": 0.007462686567164179,
+      "ci": [
+        0.001318564353840538,
+        0.041059533430896106
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 1,
+      "denominator": 134
+    },
+    "false_reassurance": {
+      "value": 0.0,
+      "ci": [
+        0,
+        0.030526178389012868
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 0,
+      "denominator": 122
+    },
+    "conditional_healthy_risk": {
+      "value": 0.0,
+      "ci": [
+        0,
+        0.22809537235419838
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 0,
+      "denominator": 13
+    },
+    "correct_accepted_yield": {
+      "value": 0.9851851851851852,
+      "ci": [
+        0.9475944129430699,
+        0.9959277965806651
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 133,
+      "denominator": 135
+    },
+    "accepted_recall_0": {
+      "value": 1.0,
+      "ci": [
+        0.8668077490609515,
+        0.9999999999999999
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 25,
+      "denominator": 25
+    },
+    "accepted_recall_1": {
+      "value": 1.0,
+      "ci": [
+        0.7719046276458016,
+        0.9999999999999999
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 13,
+      "denominator": 13
+    },
+    "accepted_recall_2": {
+      "value": 0.9615384615384616,
+      "ci": [
+        0.8110722109696524,
+        0.9931780150064564
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 25,
+      "denominator": 26
+    },
+    "accepted_recall_3": {
+      "value": 0.9859154929577465,
+      "ci": [
+        0.92443949479751,
+        0.9975093967294558
+      ],
+      "confidence_level": 0.95,
+      "method": "wilson_assuming_independent_images",
+      "status": "defined",
+      "bootstrap_valid": 2000,
+      "bootstrap_total": 2000,
+      "valid_fraction": 1.0,
+      "numerator": 70,
+      "denominator": 71
+    }
+  }
+}

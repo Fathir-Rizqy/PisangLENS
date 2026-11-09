@@ -1,0 +1,88 @@
+{
+  "model_version": "e03-large-seed42-fd0e0c2b-v2-lossless",
+  "selected_run": "E03_large_seed42",
+  "original_format": "PyTorch torchvision MobileNetV3-Large state_dict",
+  "checkpoint_sha256": "fd0e0c2be2ace54eeb1ac1891f5328f78df7d94fbadef6647f3a08faef0fcee0",
+  "state_dict_sha256": "4805961f21bbea5a7b92e728611791d035fd4d0bc20a9d5ea3d852f642c4f8ab",
+  "loader": "tf.loadLayersModel with verified lossless IO",
+  "runtime": "4.22.0",
+  "dtype": "float32",
+  "input_shape": [
+    null,
+    224,
+    224,
+    3
+  ],
+  "layout": "NHWC",
+  "color": "RGB",
+  "resize": "direct_bilinear_antialias_pillow",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "output": "logits",
+  "output_shape": [
+    null,
+    4
+  ],
+  "temperature": 1.3768672768090888,
+  "labels": [
+    "Cordana Leaf Spot",
+    "Healthy",
+    "Pestalotiopsis Leaf Blight",
+    "Sigatoka"
+  ],
+  "source_labels": [
+    "cordana",
+    "healthy",
+    "pestalotiopsis",
+    "sigatoka"
+  ],
+  "confidence_threshold": 0.8,
+  "normalization": "outside_model_once",
+  "precision_conversion": "none",
+  "parameter_count": 4207156,
+  "weight_bytes": 14396981,
+  "shards": [
+    "group1-shard1of5.bin.gz",
+    "group1-shard2of5.bin.gz",
+    "group1-shard3of5.bin.gz",
+    "group1-shard4of5.bin.gz",
+    "group1-shard5of5.bin.gz"
+  ],
+  "weight_encoding": "gzip-byte-shuffle-f32-v1",
+  "decoded_weight_bytes": 16926224,
+  "decoded_shards": [
+    {
+      "path": "group1-shard1of5.bin.gz",
+      "bytes": 4194304,
+      "sha256": "5aab8198a4c7e65d62a9bff054c53a9bf4f9d5e8b5af53b2a60c45e7730dd154"
+    },
+    {
+      "path": "group1-shard2of5.bin.gz",
+      "bytes": 4194304,
+      "sha256": "89db64f46bc173324ffb8d3ded935179776ff08eabf049e77b0937784133db55"
+    },
+    {
+      "path": "group1-shard3of5.bin.gz",
+      "bytes": 4194304,
+      "sha256": "d4259196b0e291c9a307b71a489c12058b734a0a6a5029347fefc4f630f698f9"
+    },
+    {
+      "path": "group1-shard4of5.bin.gz",
+      "bytes": 4194304,
+      "sha256": "4b79c5f64a003f38c0f3b2a4f673612371f6bc11477343dcc7f097b3c26c064a"
+    },
+    {
+      "path": "group1-shard5of5.bin.gz",
+      "bytes": 149008,
+      "sha256": "02f3a3b6525176842a4e6b24223aa2f66835807c741ed77f2ff3a2d0f018d3e5"
+    }
+  ]
+}

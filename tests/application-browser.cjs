@@ -1,0 +1,148 @@
+// Uses ONLY the private app/database created by backend-integration.py.
+const assert = require('node:assert/strict');
+const fs = require('node:fs'), path = require('node:path'), net = require('node:net');
+const { spawn } = require('node:child_process');
+const { chromium } = require(process.env.PLAYWRIGHT_PACKAGE || 'playwright');
+const root = path.resolve(__dirname, '..');
+const backend = JSON.parse(fs.readFileSync(path.join(root, 'reports/backend-verification.json')));
+assert(backend.isolated_database.startsWith('pisanglens_codex_test_') && backend.private_test_directory.startsWith('/tmp/pisanglens-backend-'));
+const work = backend.private_test_directory;
+const { password } = JSON.parse(fs.readFileSync(path.join(work, 'browser-credentials.json')));
+const checks = [];
+const passed = message => { checks.push(message); console.log('PASS browser:', message); };
+let php, browser;
+async function main() {
+    const listener = net.createServer(); await new Promise(resolve => listener.listen(0, '127.0.0.1', resolve));
+    const port = listener.address().port; await new Promise(resolve => listener.close(resolve));
+    const phpArgs = [];
+    if (process.env.PHP_EXTENSION_DIR) {
+        phpArgs.push('-n', '-d', 'extension_dir=' + process.env.PHP_EXTENSION_DIR);
+        for (const name of ['mbstring', 'pdo', 'mysqlnd', 'pdo_mysql', 'fileinfo', 'gd']) phpArgs.push('-d', 'extension=' + name);
+    }
+    const log = fs.openSync(path.join(work, 'php-browser.log'), 'a');
+    const base = `http://127.0.0.1:${port}`;
+    async function startServer() {
+        php = spawn(process.env.PHP_BINARY || 'php', [...phpArgs, '-S', `127.0.0.1:${port}`, '-t', path.join(work, 'public')], { stdio: ['ignore', log, log] });
+        for (let i = 0; i < 50; i++) { try { if ((await fetch(base)).ok) return; } catch {} await new Promise(resolve => setTimeout(resolve, 100)); }
+        throw new Error('Private PHP server did not start');
+    }
+    await startServer();
+    browser = await chromium.launch({ headless: true, args: ['--no-sandbox', '--use-angle=swiftshader', '--enable-webgl', '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] });
+    const errors = [];
+    async function login(email, role) {
+        const context = await browser.newContext({ permissions: ['camera'], viewport: { width: 390, height: 844 } });
+        const page = await context.newPage(); page.on('pageerror', error => errors.push(error.message));
+        await page.goto(base + (role === 'admin' ? '/admin-masuk.html' : '/index.html'));
+        await page.locator('input[name=email]').fill(email);
+        await page.locator('input[name=password]').fill(password);
+        await page.locator('form button[type=submit]').click();
+        await page.waitForURL('**/' + (role === 'petani' ? 'petani-kamera.html' : role === 'admin' ? 'admin-verifikasi.html' : 'botani-akun.html'));
+        return { page, context };
+    }
+    const farmer = await login('farmer-a@example.test', 'petani'), fp = farmer.page;
+    await fp.waitForFunction(() => document.getElementById('offline-state')?.textContent === 'Siap luring', null, { timeout: 120000 });
+    await fp.locator('#image-file').setInputFiles(path.join(root, 'tests/fixtures/real-model/raw_e9abdeb7f9b0_00748.png'));
+    await fp.waitForFunction(() => !document.getElementById('predict').disabled);
+    await fp.locator('#predict').click();
+    await fp.waitForFunction(() => !document.getElementById('prediction-result').hidden, null, { timeout: 30000 });
+    const text = await fp.locator('#result-summary').textContent();
+    assert(text.includes('Pestalotiopsis Leaf Blight') && text.includes('60%') && !text.includes('Simulasi prediksi'));
+    assert((await fp.locator('#prediction-mode').textContent()).includes('di perangkat ini'));
+    assert(await fp.locator('#result-summary').evaluate(el => el.classList.contains('amber')));
+    assert.equal(await fp.locator('#prediction-scenario').count(), 0);
+    passed('actual upload → Analyze → real low-confidence result and existing consultation rules');
+    await fp.locator('#save-scan').click();
+    await fp.waitForFunction(() => document.getElementById('save-message').textContent.includes('disimpan'));
+    await fp.locator('#result-consult a').click();
+    await fp.locator('#first-message').fill('Browser integration: please review this banana leaf.');
+    await fp.locator('#consultation-form button').click();
+    await fp.waitForFunction(() => document.getElementById('consultation-messages').textContent.includes('Browser integration:'));
+    passed('IndexedDB save, authenticated sync, create → key → encrypted first message');
+    const botanist = await login('botanist-a@example.test', 'botani'), bp = botanist.page;
+    await bp.goto(base + '/botani-akun.html#antrean');
+    await bp.waitForFunction(() => !!document.querySelector('#ticket-list button'));
+    await bp.locator('#ticket-list button').first().click();
+    await bp.waitForFunction(() => !document.getElementById('reply-form').hidden);
+    await bp.locator('#reply-form textarea').fill('Browser integration: expert reply, safely encrypted.');
+    await bp.locator('#reply-form button').click();
+    await fp.waitForFunction(() => document.getElementById('consultation-messages').textContent.includes('expert reply'), null, { timeout: 20000 });
+    passed('verified Botanist claim, encrypted reply, and Farmer chat polling');
+    await bp.locator('#training-review select[name=corrected_label]').selectOption('Sigatoka');
+    await bp.locator('#training-review textarea').fill('Browser regression: verified Sigatoka label.');
+    await bp.locator('#training-review button').click();
+    await bp.waitForFunction(() => document.getElementById('training-review').textContent.includes('Menunggu kurasi admin'));
+    const admin = await login('admin@example.test', 'admin'), ap = admin.page;
+    await ap.goto(base + '/admin-verifikasi.html#dataset');
+    await ap.waitForFunction(() => !!document.querySelector('#learning-list button'));
+    await ap.waitForFunction(() => document.querySelector('#learning-list img')?.naturalWidth > 0);
+    await ap.locator('#learning-list button').first().click();
+    await ap.waitForFunction(() => document.getElementById('learning-status').textContent.includes('Tidak ada kandidat'));
+    passed('Botanist label review and Admin approval with protected photo');
+    await fp.goto(base + '/petani-kamera.html#riwayat');
+    await fp.waitForFunction(() => document.querySelector('#history-list img')?.naturalWidth > 0);
+    assert((await fp.locator('#history-list').textContent()).includes('Pestalotiopsis Leaf Blight'));
+    await fp.reload();
+    await fp.waitForFunction(() => document.querySelector('#history-list img')?.naturalWidth > 0);
+    passed('Farmer history and photo survive reload');
+    await fp.goto(base + '/petani-kamera.html#kamera');
+    await fp.locator('#camera-start').click();
+    await fp.waitForFunction(() => document.getElementById('camera-video').readyState >= 2);
+    await fp.locator('#camera-capture').click();
+    await fp.waitForFunction(() => !document.getElementById('predict').disabled);
+    passed('camera permission, preview and capture using Chromium fake camera (physical camera NOT TESTED)');
+    const dark = await fp.evaluate(() => { const c = document.createElement('canvas'); c.width = c.height = 224; c.getContext('2d').fillRect(0, 0, 224, 224); return c.toDataURL().split(',')[1]; });
+    await fp.locator('#image-file').setInputFiles({ name: 'dark.png', mimeType: 'image/png', buffer: Buffer.from(dark, 'base64') });
+    await fp.waitForFunction(() => document.getElementById('photo-message').textContent.includes('terlalu gelap') && document.getElementById('predict').disabled);
+    passed('dark image rejected before inference');
+    const bright = await fp.evaluate(() => { const c = document.createElement('canvas'); c.width = c.height = 224; const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, 224, 224); return c.toDataURL().split(',')[1]; });
+    await fp.locator('#image-file').setInputFiles({ name: 'bright.png', mimeType: 'image/png', buffer: Buffer.from(bright, 'base64') });
+    await fp.waitForFunction(() => document.getElementById('photo-message').textContent.includes('terlalu terang') && document.getElementById('predict').disabled);
+    passed('overexposed image rejected before inference');
+    await fp.locator('#image-file').setInputFiles({ name: 'broken.png', mimeType: 'image/png', buffer: Buffer.from('invalid image') });
+    await fp.waitForFunction(() => document.getElementById('photo-message').textContent.includes('tidak dapat dibuka'));
+    passed('invalid upload rejected');
+    await fp.waitForFunction(() => document.getElementById('offline-state').textContent === 'Siap luring', null, { timeout: 120000 });
+    const cacheAudit = await fp.evaluate(async () => { const urls = []; for (const key of await caches.keys()) for (const request of await (await caches.open(key)).keys()) urls.push(request.url); return urls; });
+    assert(!cacheAudit.some(url => url.includes('/api/')));
+    console.log('Offline readiness:', await fp.evaluate(async () => ({ controller: navigator.serviceWorker.controller?.scriptURL, registrations: (await navigator.serviceWorker.getRegistrations()).map(r => ({ scope: r.scope, state: r.active?.state })) })));
+    // Playwright's page-offline emulation can leave service-worker networking on.
+    // Stop the HTTP server too, proving the app cannot fetch any missing asset.
+    await new Promise(resolve => { php.once('exit', resolve); php.kill(); });
+    await farmer.context.setOffline(true);
+    await fp.close();
+    const reopened = await farmer.context.newPage(); reopened.on('pageerror', error => errors.push(error.message));
+    await reopened.goto(base + '/petani-kamera.html#riwayat');
+    await reopened.waitForFunction(() => document.getElementById('offline-state').textContent === 'Siap luring', null, { timeout: 120000 });
+    await reopened.waitForFunction(() => document.querySelector('#history-list img')?.naturalWidth > 0);
+    assert.equal(await reopened.evaluate(async () => (await (await import('/js/db.js')).scansFor('different-account')).length), 0);
+    await reopened.goto(base + '/petani-kamera.html#kamus');
+    await reopened.locator('#dictionary-search').fill('Sigatoka');
+    await reopened.waitForFunction(() => document.querySelectorAll('#dictionary-list article').length === 1);
+    passed('offline dictionary search and history isolation for another account');
+    await reopened.goto(base + '/petani-kamera.html#kamera');
+    await reopened.locator('#image-file').setInputFiles(path.join(root, 'tests/fixtures/real-model/raw_e9abdeb7f9b0_00748.png'));
+    await reopened.waitForFunction(() => !document.getElementById('predict').disabled);
+    await reopened.locator('#predict').click();
+    await reopened.waitForFunction(() => !document.getElementById('prediction-result').hidden, null, { timeout: 30000 });
+    assert(!(await reopened.locator('#result-summary').textContent()).includes('Simulasi prediksi'));
+    passed('desktop browser close/reopen offline: shell, real model, new upload and history');
+    await reopened.screenshot({ path: path.join(root, 'reports/farmer-real-offline.png'), fullPage: true });
+    // A missing shard must revoke readiness and must never generate a mock result.
+    await reopened.evaluate(async () => { const { MODEL_CACHE, MODEL_ASSETS } = await import('/js/model-assets.js'); const a = MODEL_ASSETS.find(x => x.path.endsWith('.bin.gz')); await (await caches.open(MODEL_CACHE)).delete(new URL(a.path, location.origin + '/').href); });
+    await reopened.reload();
+    await reopened.waitForFunction(() => document.getElementById('offline-state').textContent === 'Gagal', null, { timeout: 30000 });
+    await reopened.locator('#image-file').setInputFiles(path.join(root, 'tests/fixtures/real-model/raw_e9abdeb7f9b0_00748.png'));
+    await reopened.waitForFunction(() => !document.getElementById('predict').disabled);
+    await reopened.locator('#predict').click();
+    await reopened.waitForFunction(() => document.getElementById('prediction-message').textContent.includes('gagal'));
+    assert(await reopened.locator('#prediction-result').evaluate(el => el.hidden));
+    passed('incomplete offline model shows Gagal and inference error; no simulation fallback');
+    await farmer.context.setOffline(false);
+    await startServer();
+    await reopened.locator('#offline-retry').click();
+    await reopened.waitForFunction(() => document.getElementById('offline-state').textContent === 'Siap luring', null, { timeout: 120000 });
+    passed('missing shard recovers through explicit retry when online');
+    assert.deepEqual(errors, []);
+    fs.writeFileSync(path.join(root, 'reports/application-browser-verification.json'), JSON.stringify({ status: 'passed', checks, exceptions: errors, http_server_stopped_during_offline: true, private_api_urls_in_cache: cacheAudit.filter(url => url.includes('/api/')), physical_android: 'NOT TESTED', physical_airplane_mode: 'NOT TESTED' }, null, 2));
+}
+main().catch(error => { console.error(error); process.exitCode = 1; }).finally(async () => { if (browser) await browser.close(); if (php) php.kill(); });

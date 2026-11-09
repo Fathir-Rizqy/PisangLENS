@@ -1,0 +1,46 @@
+path,svg,caption
+plots/01_perbandingan/peringkat_semua_run.png,plots/01_perbandingan/peringkat_semua_run.svg,"Peringkat semua run berdasarkan macro-F1 validation, lalu CE."
+plots/01_perbandingan/ringkasan_model.png,plots/01_perbandingan/ringkasan_model.svg,Rata-rata dan simpangan baku antarseed untuk finalis.
+plots/01_perbandingan/ablasi_seed42.png,plots/01_perbandingan/ablasi_seed42.svg,Ablasi resep pada seed 42.
+plots/01_perbandingan/recall_semua_run.png,plots/01_perbandingan/recall_semua_run.svg,Recall per kelas dari delapan model pada validation.
+plots/01_perbandingan/parameter_dan_training.png,plots/01_perbandingan/parameter_dan_training.svg,Tradeoff parameter dan waktu training yang teramati.
+plots/02_training/E00_small_seed42/kurva_training.png,plots/02_training/E00_small_seed42/kurva_training.svg,Learning curves E00_small_seed42.
+plots/02_training/E00_small_seed42/learning_rate.png,plots/02_training/E00_small_seed42/learning_rate.svg,Learning rate E00_small_seed42.
+plots/02_training/E00_small_seed42/confusion_matrix_validation.png,plots/02_training/E00_small_seed42/confusion_matrix_validation.svg,Confusion matrix validation · E00_small_seed42
+plots/02_training/E01_small_seed42/kurva_training.png,plots/02_training/E01_small_seed42/kurva_training.svg,Learning curves E01_small_seed42.
+plots/02_training/E01_small_seed42/learning_rate.png,plots/02_training/E01_small_seed42/learning_rate.svg,Learning rate E01_small_seed42.
+plots/02_training/E01_small_seed42/confusion_matrix_validation.png,plots/02_training/E01_small_seed42/confusion_matrix_validation.svg,Confusion matrix validation · E01_small_seed42
+plots/02_training/E02_small_seed17/kurva_training.png,plots/02_training/E02_small_seed17/kurva_training.svg,Learning curves E02_small_seed17.
+plots/02_training/E02_small_seed17/learning_rate.png,plots/02_training/E02_small_seed17/learning_rate.svg,Learning rate E02_small_seed17.
+plots/02_training/E02_small_seed17/confusion_matrix_validation.png,plots/02_training/E02_small_seed17/confusion_matrix_validation.svg,Confusion matrix validation · E02_small_seed17
+plots/02_training/E02_small_seed2026/kurva_training.png,plots/02_training/E02_small_seed2026/kurva_training.svg,Learning curves E02_small_seed2026.
+plots/02_training/E02_small_seed2026/learning_rate.png,plots/02_training/E02_small_seed2026/learning_rate.svg,Learning rate E02_small_seed2026.
+plots/02_training/E02_small_seed2026/confusion_matrix_validation.png,plots/02_training/E02_small_seed2026/confusion_matrix_validation.svg,Confusion matrix validation · E02_small_seed2026
+plots/02_training/E02_small_seed42/kurva_training.png,plots/02_training/E02_small_seed42/kurva_training.svg,Learning curves E02_small_seed42.
+plots/02_training/E02_small_seed42/learning_rate.png,plots/02_training/E02_small_seed42/learning_rate.svg,Learning rate E02_small_seed42.
+plots/02_training/E02_small_seed42/confusion_matrix_validation.png,plots/02_training/E02_small_seed42/confusion_matrix_validation.svg,Confusion matrix validation · E02_small_seed42
+plots/02_training/E03_large_seed17/kurva_training.png,plots/02_training/E03_large_seed17/kurva_training.svg,Learning curves E03_large_seed17.
+plots/02_training/E03_large_seed17/learning_rate.png,plots/02_training/E03_large_seed17/learning_rate.svg,Learning rate E03_large_seed17.
+plots/02_training/E03_large_seed17/confusion_matrix_validation.png,plots/02_training/E03_large_seed17/confusion_matrix_validation.svg,Confusion matrix validation · E03_large_seed17
+plots/02_training/E03_large_seed2026/kurva_training.png,plots/02_training/E03_large_seed2026/kurva_training.svg,Learning curves E03_large_seed2026.
+plots/02_training/E03_large_seed2026/learning_rate.png,plots/02_training/E03_large_seed2026/learning_rate.svg,Learning rate E03_large_seed2026.
+plots/02_training/E03_large_seed2026/confusion_matrix_validation.png,plots/02_training/E03_large_seed2026/confusion_matrix_validation.svg,Confusion matrix validation · E03_large_seed2026
+plots/02_training/E03_large_seed42/kurva_training.png,plots/02_training/E03_large_seed42/kurva_training.svg,Learning curves E03_large_seed42.
+plots/02_training/E03_large_seed42/learning_rate.png,plots/02_training/E03_large_seed42/learning_rate.svg,Learning rate E03_large_seed42.
+plots/02_training/E03_large_seed42/confusion_matrix_validation.png,plots/02_training/E03_large_seed42/confusion_matrix_validation.svg,Confusion matrix validation · E03_large_seed42
+plots/02_training/ikhtisar_macro_f1.png,plots/02_training/ikhtisar_macro_f1.svg,Perkembangan macro-F1 validation semua eksperimen.
+plots/03_evaluasi/confusion_matrix_test.png,plots/03_evaluasi/confusion_matrix_test.svg,Confusion matrix test · E03 Large seed 42
+plots/03_evaluasi/performa_dan_interval.png,plots/03_evaluasi/performa_dan_interval.svg,Performa test per kelas dan interval ketidakpastian.
+plots/03_evaluasi/roc_dan_precision_recall.png,plots/03_evaluasi/roc_dan_precision_recall.svg,ROC dan precision–recall dari prediksi test tersimpan.
+plots/03_evaluasi/kalibrasi.png,plots/03_evaluasi/kalibrasi.svg,Kalibrasi confidence sebelum dan sesudah temperature scaling.
+plots/03_evaluasi/keputusan_dan_confidence.png,plots/03_evaluasi/keputusan_dan_confidence.svg,Hasil policy confidence dan distribusi confidence test.
+plots/03_evaluasi/galeri_kesalahan.png,plots/03_evaluasi/galeri_kesalahan.svg,Kedua kesalahan argmax pada test.
+plots/04_robustness/gangguan_gambar.png,plots/04_robustness/gangguan_gambar.svg,Macro-F1 dan coverage pada 12 kondisi stress.
+plots/04_robustness/recall_per_kelas.png,plots/04_robustness/recall_per_kelas.svg,Recall setiap kelas pada seluruh kondisi gangguan.
+plots/05_dataset/distribusi_kelas_dan_split.png,plots/05_dataset/distribusi_kelas_dan_split.svg,Distribusi kelas sebelum/sesudah cleaning dan per split.
+plots/05_dataset/kualitas_gambar.png,plots/05_dataset/kualitas_gambar.svg,Distribusi kualitas gambar pada dataset bersih.
+plots/05_dataset/histogram_rgb_sumber.png,plots/05_dataset/histogram_rgb_sumber.svg,Histogram RGB sumber sebelum cleaning.
+plots/05_dataset/contoh_gambar_train.png,plots/05_dataset/contoh_gambar_train.svg,Contoh dua gambar per kelas dari train.
+plots/05_dataset/kandidat_mirip_lintas_split.png,plots/05_dataset/kandidat_mirip_lintas_split.svg,Pasangan kandidat gambar mirip yang melintasi train–validation.
+plots/05_dataset/preview_augmentasi_asli.png,,"Preview augmentasi asli, disalin apa adanya agar transform yang tercatat tetap otentik."
+plots/06_efisiensi/latency_cpu_host.png,plots/06_efisiensi/latency_cpu_host.svg,Distribusi latency model dan pipeline pada CPU host.

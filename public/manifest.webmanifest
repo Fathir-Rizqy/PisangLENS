@@ -1,0 +1,9 @@
+{
+    "id": "./",
+    "name": "PisangLENS",
+    "short_name": "PisangLENS",
+    "lang": "id",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone"
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ruang Petani | PisangLENS</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="module" src="js/petani.js?v=real-3"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="shell header-content">
+            <a class="brand" href="#kamera">PisangLENS <small>RUANG PETANI</small></a>
+            <button class="secondary compact" id="logout" type="button">Keluar</button>
+        </div>
+    </header>
+    <main class="shell" id="farmer-app" hidden>
+        <div class="hero">
+            <p class="eyebrow">CATATAN KESEHATAN DAUN</p>
+            <h1 id="greeting">Ruang Petani</h1>
+            <p id="account-mode"></p>
+            <p><strong id="offline-state" role="status">Belum siap</strong> <span id="offline-detail">· Model AI lokal belum diverifikasi.</span></p>
+            <button id="offline-retry" class="secondary" type="button">Periksa kesiapan luring</button>
+        </div>
+        <p id="session-message" class="message" role="status"></p>
+        <section class="view" id="kamera" aria-labelledby="camera-title">
+            <div class="panel">
+                <p class="eyebrow">01 / PEMERIKSAAN</p>
+                <h2 id="camera-title">Periksa daun</h2>
+                <p>Potret satu daun dalam cahaya merata atau pilih foto dari perangkat.</p>
+                <div class="actions">
+                    <button id="camera-start" type="button">Buka kamera</button>
+                    <button class="secondary" id="camera-stop" type="button" hidden>Tutup kamera</button>
+                    <button id="camera-capture" type="button" hidden>Potret daun</button>
+                </div>
+                <video id="camera-video" class="media" aria-label="Pratinjau kamera" autoplay playsinline muted hidden></video>
+                <label for="image-file">Unggah foto <small>JPG, PNG, atau WEBP · maks. 5 MB</small></label>
+                <input id="image-file" type="file" accept="image/jpeg,image/png,image/webp">
+                <canvas id="image-preview" class="media" role="img" aria-label="Pratinjau foto daun" hidden></canvas>
+                <p id="photo-message" class="message" role="status"></p>
+            </div>
+            <div class="panel">
+                <h2>Analisis foto</h2>
+                <p id="prediction-mode">Foto dianalisis oleh model AI di perangkat ini. Hasil merupakan identifikasi awal kondisi daun.</p>
+                <button id="predict" type="button" disabled>Analisis foto</button>
+                <p id="prediction-message" class="message" role="status"></p>
+                <section id="prediction-result" aria-labelledby="result-title" hidden>
+                    <h3 id="result-title">Hasil identifikasi awal</h3>
+                    <div id="result-summary" class="result"></div>
+                    <h3>Panduan Tindak Lanjut</h3>
+                    <label for="phase">Fase tanaman</label>
+                    <select id="phase">
+                        <option value="tumbuh">Tumbuh</option>
+                        <option value="berbuah">Berbuah</option>
+                    </select>
+                    <p id="guidance"></p>
+                    <button id="save-scan" type="button">Simpan ke riwayat</button>
+                    <p id="save-message" class="message" role="status"></p>
+                    <div id="result-consult"></div>
+                </section>
+            </div>
+        </section>
+        <section class="view" id="kamus" aria-labelledby="dictionary-title" hidden>
+            <div class="panel">
+                <p class="eyebrow">02 / REFERENSI</p>
+                <h2 id="dictionary-title">Kamus daun pisang</h2>
+                <label for="dictionary-search">Cari kondisi daun</label>
+                <input id="dictionary-search" type="search" placeholder="Misalnya, Sigatoka">
+                <p id="dictionary-count" role="status"></p>
+                <div id="dictionary-list" class="card-grid"></div>
+            </div>
+        </section>
+        <section class="view" id="riwayat" aria-labelledby="history-title" hidden>
+            <div class="panel">
+                <p class="eyebrow">03 / CATATAN</p>
+                <h2 id="history-title">Riwayat pemindaian</h2>
+                <p>Riwayat tersimpan di peramban untuk akun aktif.</p>
+                <p id="history-message" role="status"></p>
+                <ul id="history-list" class="history-list"></ul>
+            </div>
+        </section>
+        <section class="view" id="konsultasi" aria-labelledby="consultation-title" hidden>
+            <div class="panel">
+                <p class="eyebrow">04 / BANTUAN PAKAR</p>
+                <h2 id="consultation-title">Konsultasi botani</h2>
+                <p id="consultation-detail">Buka konsultasi dari hasil penyakit atau keyakinan rendah.</p>
+                <button class="secondary" id="consultation-back" type="button" hidden>Kembali ke daftar konsultasi</button>
+                <button class="secondary" id="consultation-retry" type="button" hidden>Coba buka konsultasi</button>
+                <div id="consultation-photo"></div>
+                <ul id="consultation-list" class="history-list"></ul>
+                <ul id="consultation-messages" class="history-list"></ul>
+                <form id="consultation-form" hidden>
+                    <label for="first-message">Pesan untuk botani</label>
+                    <textarea id="first-message" name="message" rows="4" required></textarea>
+                    <button type="submit">Kirim konsultasi</button>
+                </form>
+                <p id="consultation-message" role="status"></p>
+                <button class="secondary" id="consultation-refresh" type="button">Muat ulang konsultasi</button>
+            </div>
+        </section>
+        <section class="view" id="direktori" aria-labelledby="directory-title" hidden>
+            <div class="panel" id="farmer-directory">
+                <h2 id="directory-title">Direktori Botani</h2>
+                <p>Temukan botani terverifikasi. Konsultasi tetap melalui antrean tiket.</p>
+                <label>Provinsi <select data-province><option value="">Semua provinsi</option></select></label>
+                <label>Kota/kabupaten <select data-city><option value="">Semua kota/kabupaten</option></select></label>
+                <button class="secondary" type="button" data-directory-refresh>Muat ulang direktori</button>
+                <p data-directory-status role="status"></p><ul class="history-list" data-directory-list></ul>
+            </div>
+        </section>
+    </main>
+    <nav class="bottom-nav" aria-label="Navigasi petani" id="farmer-nav" hidden>
+        <a href="#kamera">Kamera</a>
+        <a href="#kamus">Kamus</a>
+        <a href="#riwayat">Riwayat</a>
+        <a href="#konsultasi">Konsultasi</a>
+        <a href="#direktori">Botani</a>
+    </nav>
+    <noscript><p>Aktifkan JavaScript untuk menggunakan ruang petani.</p></noscript>
+</body>
+</html>

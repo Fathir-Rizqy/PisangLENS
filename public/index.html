@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PisangLENS</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="module" src="js/auth.js"></script>
+</head>
+<body>
+    <main class="auth-shell">
+        <p class="eyebrow">PisangLENS / AKSES AKUN</p>
+        <h1>PisangLENS</h1>
+        <p class="intro">Kenali kondisi daun pisang dan simpan catatan pemeriksaan kebun.</p>
+        <nav class="panel actions" aria-label="Pilih akses akun">
+            <a class="action-link" href="index.html?role=petani">Masuk Petani</a>
+            <a class="action-link" href="index.html?role=botani">Masuk Botani</a>
+        </nav>
+        <section class="panel" aria-labelledby="login-title">
+            <h2 id="login-title">Masuk ke PisangLENS</h2>
+            <form id="login-form" novalidate>
+                <label>Email <input name="email" type="email" autocomplete="username" required maxlength="254"></label>
+                <label>Kata sandi <input name="password" type="password" autocomplete="current-password" required></label>
+                <button type="submit">Masuk</button>
+                <p class="message" id="auth-status" role="status"></p>
+            </form>
+            <p>Belum punya akun? <a href="petani-daftar.html">Daftar sebagai petani atau botani</a></p>
+            <p><a href="petani-daftar.html?role=petani">Daftar Petani</a> · <a href="petani-daftar.html?role=botani">Daftar Botani</a></p>
+            <p id="role-description">Masuk menggunakan akun petani atau botani Anda.</p>
+        </section>
+    </main>
+</body>
+</html>
